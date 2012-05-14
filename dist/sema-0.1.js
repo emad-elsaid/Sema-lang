@@ -25,13 +25,22 @@ sema.tree.block = function(selector,properties){
 	
 	this.render = function(){
 		
+		var me = this;
+		
 		// if block has no properties then don't produce any HTML
 		if(this.properties.length==0)
 			return '';
 			
 		// get selector string
 		var selector = this.selector
-							.map(function(item){return item.render();})
+							.map(function(item,index){
+								return (
+									index>0
+									&&me.selector[index-1].getIdentifier().trim().length>1
+									? ' '
+									: ''
+								) + item.render();
+							})
 							.join('');
 		
 		// get properties string
@@ -82,6 +91,10 @@ sema.tree.property = function(name,value){
 sema.tree.selector = function(identifier){
 	
 	this.identifier = typeof identifier == 'string' ? identifier : '';
+	
+	this.getIdentifier = function(){
+		return this.identifier;
+	}
 	
 	this.render = function(){
 		return this.identifier;
@@ -671,7 +684,9 @@ switch( act )
 	break;
 	case 7:
 	{
-		 rval = vstack[ vstack.length - 1 ].map(function(item){ return new sema.tree.selector(item);}); 
+		 rval = vstack[ vstack.length - 1 ].map(function(item){
+																	return new sema.tree.selector(item);
+																}); 
 	}
 	break;
 	case 8:

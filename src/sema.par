@@ -31,11 +31,13 @@ blocks			:blocks block								[* %% = %1;%1.push(%2); *]
 				|block										[* %% = [%1]; *]
 				;
 				
-block			:selector_list '{' properties_list  '}'	[* %% = new sema.tree.block(%1,%3); *]
-				|selector_list '{'  '}'					[* %% = new sema.tree.block(%1); *]
+block			:selector_list '{' properties_list  '}'		[* %% = new sema.tree.block(%1,%3); *]
+				|selector_list '{'  '}'						[* %% = new sema.tree.block(%1); *]
 				;
 
-selector_list	:identifier_list			[* %% = %1.map(function(item){ return new sema.tree.selector(item);}); *]
+selector_list	:identifier_list							[* %% = %1.map(function(item){
+																	return new sema.tree.selector(item);
+																}); *]
 				;
 				
 identifier_list :identifier_list identifier_part			[* %% = %1;%1.push(%2); *]
