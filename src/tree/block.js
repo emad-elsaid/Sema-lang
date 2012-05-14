@@ -16,6 +16,7 @@ sema.tree.block = function(selector,properties){
 							.map(function(item,index){
 								return (
 									index>0
+									&&item.getIdentifier().trim().length>1
 									&&me.selector[index-1].getIdentifier().trim().length>1
 									? ' '
 									: ''
