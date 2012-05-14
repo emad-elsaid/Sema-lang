@@ -13,10 +13,6 @@
  * version : 0.1
  */
 var sema = new Object();
-sema.translate = function(type,word){
-	console.log(type,word);
-	return word;
-}
 sema.tree = {};
 sema.tree.block = function(selector,properties){
 
@@ -36,8 +32,8 @@ sema.tree.block = function(selector,properties){
 							.map(function(item,index){
 								return (
 									index>0
-									&&item.getIdentifier().trim().length>1
-									&&me.selector[index-1].getIdentifier().trim().length>1
+									&&(!item.isSeparator())
+									&&(!me.selector[index-1].isSeparator())
 									? ' '
 									: ''
 								) + item.render();
@@ -99,6 +95,11 @@ sema.tree.selector = function(identifier){
 	
 	this.render = function(){
 		return this.identifier;
+	}
+	
+	this.isSeparator = function(){
+		var identifier = this.identifier.trim();
+		return ['#','>','.',':',','].indexOf(identifier)>-1;
 	}
 }
 
@@ -317,16 +318,6 @@ switch( state )
 		info.att = info.src.substr( start, match_pos - start );
 		info.offset = match_pos;
 		
-switch( match )
-{
-	case 2:
-		{
-		 info.att = sema.translate( 'identifier',info.att ); 
-		}
-		break;
-
-}
-
 
 	}
 	else

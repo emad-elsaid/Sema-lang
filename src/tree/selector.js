@@ -9,4 +9,9 @@ sema.tree.selector = function(identifier){
 	this.render = function(){
 		return this.identifier;
 	}
+	
+	this.isSeparator = function(){
+		var identifier = this.identifier.trim();
+		return ['#','>','.',':',','].indexOf(identifier)>-1;
+	}
 }
