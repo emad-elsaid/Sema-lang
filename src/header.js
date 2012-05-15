@@ -3,4 +3,5 @@
  * version : @VERSION
  */
 var sema = new Object();
+sema.utils = {};
 sema.tree = {};

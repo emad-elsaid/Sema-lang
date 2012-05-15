@@ -20,6 +20,8 @@ sema.parse = function(src){
 	'\('
 	'\)'
 	';'									line_terminal
+	'\*'
+	'!important'						important
 	;
 	
 ##
@@ -48,6 +50,7 @@ identifier_part :identifier '(' params_list ')'				[* %% = new sema.tree.func(%1
 				|identifier
 				|color
 				|separator
+				|'*'
 				;
 				
 params_list 	:params_list ',' param						[* %% = %1;%1.push(%3); *]
@@ -68,7 +71,11 @@ properties_list	:properties_list property					[* %% = %1;%1.push(%2); *]
 				|property									[* %% = [%1] *]
 				;
 
-property		:identifier ':'	identifier_list	line_terminal		[* %% = new sema.tree.property(%1,%3); *]
+property		:identifier ':'	identifier_list	important_sign line_terminal	[* %% = new sema.tree.property(%1,%3,%4); *]
+				;
+
+important_sign	:important									[* %% = true; *]
+				|											[* %% = false; *]
 				;
 
 [*

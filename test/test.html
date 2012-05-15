@@ -70,10 +70,21 @@ div > p {
 
 }
 
+div , * {
+	border : 1px solid;
+}
+
+div * {
+	border: 1px solid;
+}
+
 div p {
 	border: 1px solid #fff;
 }
 
+div p {
+	border: 1px solid #fff !important;
+}
 
 div > p . a : hover, section{
 
@@ -90,6 +101,12 @@ div > p . a : nth-child(3,0,yes,"string",#ff0066), section{
 div > p . a : hover, section{
 	background: #fff url("teset.png");
 	border: 1px solid #fff;
+	-webkit-border-radius: 0px 9px 5px;
+}
+
+div > p . a : hover, section{
+	الخلفية: #fff url("teset.png");
+	الحدود: 1px solid #fff;
 	-webkit-border-radius: 0px 9px 5px;
 }
 

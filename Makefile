@@ -8,6 +8,7 @@ all:
 	@@touch ${DIST}
 	@@cat ${SRC}/lib/* > ${DIST}
 	@@cat ${HEADER} | sed s/@VERSION/${VERSION}/ >> ${DIST}
+	@@cat ${SRC}/utils/* >> ${DIST}
 	@@cat ${SRC}/tree/* >> ${DIST}
 	@@rhino ${SRC}/jscc.js -t ${SRC}/driver_web.js_ ${SRC}/sema.par >> ${DIST}
 	@@cat ${SRC}/footer.js >> ${DIST}
