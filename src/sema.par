@@ -8,20 +8,20 @@ sema.parse = function(src){
 
 !	' |\r|\n|\t|//[^\n]*\n'
 
-	'[\1569-\1641a-zA-Z0-9_\-]+'		identifier
-	'\"([^\"]|\\\")*\"'					string
+	'[\1569-\1641a-zA-Z0-9_\-]+'					identifier
+	'(\"([^\"]|\\\")*\")|(\'([^\']|\\\')*\')'		string
 	'{'
 	'}'
 	','
-	' *#'								id_sign
+	' *#'											id_sign
 	':'
-	' *\.'								class_sign
+	' *\.'											class_sign
 	'>'
 	'\('
 	'\)'
-	';'									line_terminal
+	';'												line_terminal
 	'\*'
-	'!important'						important
+	'!important'									important
 	;
 	
 ##

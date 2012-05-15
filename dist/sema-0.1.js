@@ -18,42 +18,19 @@ sema.tree = {};
 sema.utils.translator = {
 
 	table:{
-		'':'-moz-binding',
-		'':'-moz-border-bottom-colors',
-		'':'-moz-border-left-colors',
-		'':'-moz-border-radius',
-		'':'-moz-border-radius-bottomleft',
-		'':'-moz-border-radius-bottomright',
-		'':'-moz-border-radius-topleft',
-		'':'-moz-border-radius-topright',
-		'':'-moz-border-right-colors',
-		'':'-moz-border-top-colors',
-		'':'-moz-opacity',
-		'':'-moz-outline',
-		'':'-moz-outline-color',
-		'':'-moz-outline-style',
-		'':'-moz-outline-width',
-		'':'-moz-user-focus',
-		'':'-moz-user-input',
-		'':'-moz-user-modify',
-		'':'-moz-user-select',
-		'':'-replace',
-		'':'-set-link-source',
-		'':'-use-link-source',
-		'':':active',
-		'':':after',
-		'':':before',
-		'اول':':first',
-		'اول-ابن':':first-child',
-		'اول-حرف':':first-letter',
-		'اول-سطر':':first-line',
-		'تركيز':':focus',
-		'طفو':':hover',
-		'لغة':':lang',
-		'يسار':':left',
-		'رابط':':link',
-		'يمين':':right',
-		'مزار':':visited',
+		'نشط':'active',
+		'بعد':'after',
+		'اول':'first',
+		'اول-ابن':'first-child',
+		'اول-حرف':'first-letter',
+		'اول-سطر':'first-line',
+		'تركيز':'focus',
+		'طفو':'hover',
+		'لغة':'lang',
+		'يسار':'left',
+		'رابط':'link',
+		'يمين':'right',
+		'مزار':'visited',
 		'فوق':'above',
 		'حر':'absolute',
 		'مسرع':'accelerator',
@@ -204,20 +181,19 @@ sema.utils.translator = {
 		'خط-اساس-سائد':'dominant-baseline',
 		'منقط':'dotted',
 		'مضاعف':'double',
-		'':'drop-initial-after-adjust',
-		'':'drop-initial-after-align',
-		'':'drop-initial-before-adjust',
-		'':'drop-initial-before-align',
-		'':'drop-initial-size',
-		'':'drop-initial-value',
-		'':'e-resize',
-		'':'ease',
-		'':'elevation',
-		'':'em',
-		'':'embed',
-		'':'empty-cells',
-		'':'ex',
-		'':'exclude-ruby',
+		'اسقط-البداية-بعد-الضبط':'drop-initial-after-adjust',
+		'اسقط-البداية-بعد-المحاذاة':'drop-initial-after-align',
+		'اسقط-البداية-قبل-الضبط':'drop-initial-before-adjust',
+		'اسقط-البداية-قبل-المحاذاة':'drop-initial-before-align',
+		'مقاس-اسقاط-البداية':'drop-initial-size',
+		'قيمة-اسقاط-البداية':'drop-initial-value',
+		'تحجيم-شرق':'e-resize',
+		'سهل':'ease',
+		'رفع':'elevation',
+		'حرف':'em',
+		'ادراج':'embed',
+		'الخلايا-الفارغة':'empty-cells',
+		'اكس':'ex',
 		'متمدد':'expanded',
 		'كثيف-اضافى':'extra-condensed',
 		'متمدد-اضافى':'extra-expanded',
@@ -225,28 +201,28 @@ sema.utils.translator = {
 		'اقصى-اليمين':'far-right',
 		'سريع':'fast',
 		'اسرع':'faster',
-		'':'filter',
-		'':'fit',
-		'':'fit-position',
-		'':'fixed',
+		'فلتر':'filter',
+		'مناسب':'fit',
+		'مكان-مناسب':'fit-position',
+		'ثابت':'fixed',
 		'مسطح':'flat',
-		'':'flex-align',
-		'':'flex-flow',
-		'':'flex-line-pack',
-		'':'flex-order',
-		'':'flex-pack',
+		'محاذاة-المرن':'flex-align',
+		'تدفق-المرن':'flex-flow',
+		'حزمة-السطور-المرنة':'flex-line-pack',
+		'ترتيب-المرن':'flex-order',
+		'حزمة-مرنة':'flex-pack',
 		'عائم':'float',
-		'':'float-offset',
+		'بعد-العوم':'float-offset',
 		'الخط':'font',
 		'عائلة-الخط':'font-family',
 		'مقاس-الخط':'font-size',
-		'':'font-size-adjust',
-		'':'font-stretch',
+		'ضبط-مقاس-الخط':'font-size-adjust',
+		'مد-الخط':'font-stretch',
 		'شكل-الخط':'font-style',
 		'اختلاف-الخط':'font-variant',
 		'ثقل-الخط':'font-weight',
-		'':'forward',
-		'':'fuchsia',
+		'للامام':'forward',
+		'ارجوانى':'fuchsia',
 		'جورجى':'georgian',
 		'رمادى':'gray',
 		'اخضر':'green',
@@ -263,23 +239,23 @@ sema.utils.translator = {
 		'اعلى':'higher',
 		'هيراجانا':'hiragana',
 		'هيراجانا-ايروها':'hiragana-iroha',
-		'':'hyphenate-after',
-		'':'hyphenate-before',
-		'':'hyphenate-character',
-		'':'hyphenate-lines',
-		'':'hyphenate-resource',
-		'':'hyphens',
+		'وصلة-بعدها':'hyphenate-after',
+		'وصلة-قبلها':'hyphenate-before',
+		'حرف-الوصلة':'hyphenate-character',
+		'سطور-موصلة':'hyphenate-lines',
+		'مصدر-موصل':'hyphenate-resource',
+		'وصلات':'hyphens',
 		'ايقونة':'icon',
 		'توجيه-الصورة':'image-orientation',
 		'اظهار-الصورة':'image-rendering',
 		'دقة-الصورة':'image-resolution',
-		'':'ime-mode',
+		'نمط-محرر-الحروف':'ime-mode',
 		'انش':'in',
-		'':'include-source',
-		'':'inline',
+		'تضمين-مصدر':'include-source',
+		'ضمنى':'inline',
 		'':'inline-box-align',
 		'':'inline-line-height',
-		'':'inline-table',
+		'جدول-ضمنى':'inline-table',
 		'درج':'inset',
 		'داخلى':'inside',
 		'عكس':'invert',
@@ -287,7 +263,7 @@ sema.utils.translator = {
 		'محاذاة':'justify',
 		'كاتاكانا':'katakana',
 		'كاتاكانا-ايروها':'katakana-iroha',
-		'':'landscape',
+		'مشهد-عرضى':'landscape',
 		'كبير':'large',
 		'اكبر':'larger',
 		'الاخير':'last',
@@ -306,11 +282,10 @@ sema.utils.translator = {
 		'تباعد-الحروف':'letter-spacing',
 		'المستوى':'level',
 		'اخف':'lighter',
-		'':'lime',
+		'ليمونى':'lime',
 		'فاصل-السطر':'line-break',
 		'ارتفاع-السطر':'line-height',
 		'تراص-السطور':'line-stacking',
-		'':'line-stacking-ruby',
 		'':'line-stacking-shift',
 		'':'line-stacking-strategy',
 		'':'line-through',
@@ -336,7 +311,7 @@ sema.utils.translator = {
 		'':'marker',
 		'':'marker-offset',
 		'':'marks',
-		'':'maroon',
+		'نبيتى':'maroon',
 		'':'marquee-direction',
 		'':'marquee-loop',
 		'':'marquee-play-count',
@@ -360,8 +335,8 @@ sema.utils.translator = {
 		'':'nav-left',
 		'':'nav-right',
 		'':'nav-up',
-		'':'navy',
-		'':'ne-resize',
+		'كحلى':'navy',
+		'تحجيم-شمال-الشرقى':'ne-resize',
 		'':'no-close-quote',
 		'بدون-حدود':'no-limit',
 		'':'no-open-quote',
@@ -382,21 +357,19 @@ sema.utils.translator = {
 		'':'outline-offset',
 		'':'outline-style',
 		'':'outline-width',
-		'':'outset',
-		'':'outside',
-		'':'overflow',
-		'':'overflow-X',
-		'':'overflow-Y',
-		'':'overflow-style',
-		'':'overflow-wrap',
-		'':'overflow-x',
-		'':'overflow-y',
-		'':'overline',
-		'':'padding',
-		'':'padding-bottom',
-		'':'padding-left',
-		'':'padding-right',
-		'':'padding-top',
+		'بداية':'outset',
+		'خارج':'outside',
+		'الزيادة':'overflow',
+		'شكل-الزيادة':'overflow-style',
+		'التفاف-الزيادة':'overflow-wrap',
+		'زيادة-س':'overflow-x',
+		'زيادة-ص':'overflow-y',
+		'فوقه-خط':'overline',
+		'التبطين':'padding',
+		'التبطين-السفلى':'padding-bottom',
+		'التبطين-الايسر':'padding-left',
+		'التبطين-الايمن':'padding-right',
+		'التبطين-العلوى':'padding-top',
 		'صفحة':'page',
 		'':'page-break-after',
 		'':'page-break-before',
@@ -413,18 +386,18 @@ sema.utils.translator = {
 		'مدى-النغمة':'pitch-range',
 		'فترة-التشغيل':'play-during',
 		'المؤشر':'pointer',
-		'':'position',
-		'':'potrait',
-		'':'pre',
+		'مكان':'position',
+		'لوحة':'portrait',
+		'سابقة':'pre',
 		'':'presentation-level',
 		'نقطة':'pt',
 		'':'punctuation-trim',
-		'':'purple',
+		'بنفسجى':'purple',
 		'بيكسل':'px',
 		'':'quotes',
 		'مستطيل':'rect',
 		'احمر':'red',
-		'':'relative',
+		'نسبى':'relative',
 		'':'rendering-intent',
 		'تكرار':'repeat',
 		'تكرار-س':'repeat-x',
@@ -435,19 +408,15 @@ sema.utils.translator = {
 		'':'rest-before',
 		'':'richness',
 		'':'ridge',
-		'':'right',
-		'':'right-side',
-		'':'rightwards',
+		'يمين':'right',
+		'الجانب-الايمن':'right-side',
+		'اتجاه-اليمين':'rightwards',
 		'تدوير':'rotation',
 		'نقطة-التدوير':'rotation-point',
 		'صف':'row',
 		'من-اليمين-لليسار':'rtl',
-		'':'ruby-align',
-		'':'ruby-overhang',
-		'':'ruby-position',
-		'':'ruby-span',
 		'':'run-in',
-		'':'running',
+		'تشغيل':'running',
 		'تحجيم-جنوب':'s-resize',
 		'':'scroll',
 		'':'scrollbar-3d-light-color',
@@ -470,19 +439,19 @@ sema.utils.translator = {
 		'بطىء':'slow',
 		'ابطا':'slower',
 		'صغير':'small',
-		'':'small-caps',
+		'خط-صغير':'small-caps',
 		'اصغر':'smaller',
 		'ناعم':'soft',
 		'مصمت':'solid',
 		'تحدث':'speak',
-		'':'speak-header',
-		'':'speak-numeral',
-		'':'speak-punctuation',
+		'تحدث-الراس':'speak-header',
+		'تحدث-الارقام':'speak-numeral',
+		'تحدث-علامات-الترقيم':'speak-punctuation',
 		'معدل-الحديث':'speech-rate',
 		'نطق-موضح':'spell-out',
 		'مربع':'square',
-		'بداية':'start',
-		'ثابت':'static',
+		'ابدا':'start',
+		'ساكن':'static',
 		'ضغط':'stress',
 		'تمديد':'stretch',
 		'مجموعة-نص':'string-set',
@@ -760,7 +729,8 @@ switch( state )
 		else if( info.src.charCodeAt( pos ) == 33 ) state = 16;
 		else if( info.src.charCodeAt( pos ) == 32 ) state = 17;
 		else if( info.src.charCodeAt( pos ) == 34 ) state = 19;
-		else if( info.src.charCodeAt( pos ) == 47 ) state = 20;
+		else if( info.src.charCodeAt( pos ) == 39 ) state = 21;
+		else if( info.src.charCodeAt( pos ) == 47 ) state = 22;
 		else state = -1;
 		break;
 
@@ -856,14 +826,14 @@ switch( state )
 		break;
 
 	case 16:
-		if( info.src.charCodeAt( pos ) == 105 ) state = 22;
+		if( info.src.charCodeAt( pos ) == 105 ) state = 24;
 		else state = -1;
 		break;
 
 	case 17:
 		if( info.src.charCodeAt( pos ) == 35 ) state = 2;
 		else if( info.src.charCodeAt( pos ) == 46 ) state = 8;
-		else if( info.src.charCodeAt( pos ) == 32 ) state = 21;
+		else if( info.src.charCodeAt( pos ) == 32 ) state = 23;
 		else state = -1;
 		match = 1;
 		match_pos = pos;
@@ -872,7 +842,7 @@ switch( state )
 	case 18:
 		if( info.src.charCodeAt( pos ) == 34 ) state = 14;
 		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 33 ) || ( info.src.charCodeAt( pos ) >= 35 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 19;
-		else if( info.src.charCodeAt( pos ) == 92 ) state = 23;
+		else if( info.src.charCodeAt( pos ) == 92 ) state = 25;
 		else state = -1;
 		match = 3;
 		match_pos = pos;
@@ -881,71 +851,94 @@ switch( state )
 	case 19:
 		if( info.src.charCodeAt( pos ) == 34 ) state = 14;
 		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 33 ) || ( info.src.charCodeAt( pos ) >= 35 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 19;
-		else if( info.src.charCodeAt( pos ) == 92 ) state = 23;
+		else if( info.src.charCodeAt( pos ) == 92 ) state = 25;
 		else state = -1;
 		break;
 
 	case 20:
-		if( info.src.charCodeAt( pos ) == 47 ) state = 24;
+		if( info.src.charCodeAt( pos ) == 39 ) state = 14;
+		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 38 ) || ( info.src.charCodeAt( pos ) >= 40 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 21;
+		else if( info.src.charCodeAt( pos ) == 92 ) state = 26;
 		else state = -1;
+		match = 3;
+		match_pos = pos;
 		break;
 
 	case 21:
-		if( info.src.charCodeAt( pos ) == 35 ) state = 2;
-		else if( info.src.charCodeAt( pos ) == 46 ) state = 8;
-		else if( info.src.charCodeAt( pos ) == 32 ) state = 21;
+		if( info.src.charCodeAt( pos ) == 39 ) state = 14;
+		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 38 ) || ( info.src.charCodeAt( pos ) >= 40 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 21;
+		else if( info.src.charCodeAt( pos ) == 92 ) state = 26;
 		else state = -1;
 		break;
 
 	case 22:
-		if( info.src.charCodeAt( pos ) == 109 ) state = 25;
+		if( info.src.charCodeAt( pos ) == 47 ) state = 27;
 		else state = -1;
 		break;
 
 	case 23:
-		if( info.src.charCodeAt( pos ) == 34 ) state = 18;
-		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 33 ) || ( info.src.charCodeAt( pos ) >= 35 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 19;
-		else if( info.src.charCodeAt( pos ) == 92 ) state = 23;
+		if( info.src.charCodeAt( pos ) == 35 ) state = 2;
+		else if( info.src.charCodeAt( pos ) == 46 ) state = 8;
+		else if( info.src.charCodeAt( pos ) == 32 ) state = 23;
 		else state = -1;
 		break;
 
 	case 24:
-		if( info.src.charCodeAt( pos ) == 10 ) state = 1;
-		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 9 ) || ( info.src.charCodeAt( pos ) >= 11 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 24;
+		if( info.src.charCodeAt( pos ) == 109 ) state = 28;
 		else state = -1;
 		break;
 
 	case 25:
-		if( info.src.charCodeAt( pos ) == 112 ) state = 26;
+		if( info.src.charCodeAt( pos ) == 34 ) state = 18;
+		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 33 ) || ( info.src.charCodeAt( pos ) >= 35 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 19;
+		else if( info.src.charCodeAt( pos ) == 92 ) state = 25;
 		else state = -1;
 		break;
 
 	case 26:
-		if( info.src.charCodeAt( pos ) == 111 ) state = 27;
+		if( info.src.charCodeAt( pos ) == 39 ) state = 20;
+		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 38 ) || ( info.src.charCodeAt( pos ) >= 40 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 21;
+		else if( info.src.charCodeAt( pos ) == 92 ) state = 26;
 		else state = -1;
 		break;
 
 	case 27:
-		if( info.src.charCodeAt( pos ) == 114 ) state = 28;
+		if( info.src.charCodeAt( pos ) == 10 ) state = 1;
+		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 9 ) || ( info.src.charCodeAt( pos ) >= 11 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 27;
 		else state = -1;
 		break;
 
 	case 28:
-		if( info.src.charCodeAt( pos ) == 116 ) state = 29;
+		if( info.src.charCodeAt( pos ) == 112 ) state = 29;
 		else state = -1;
 		break;
 
 	case 29:
-		if( info.src.charCodeAt( pos ) == 97 ) state = 30;
+		if( info.src.charCodeAt( pos ) == 111 ) state = 30;
 		else state = -1;
 		break;
 
 	case 30:
-		if( info.src.charCodeAt( pos ) == 110 ) state = 31;
+		if( info.src.charCodeAt( pos ) == 114 ) state = 31;
 		else state = -1;
 		break;
 
 	case 31:
+		if( info.src.charCodeAt( pos ) == 116 ) state = 32;
+		else state = -1;
+		break;
+
+	case 32:
+		if( info.src.charCodeAt( pos ) == 97 ) state = 33;
+		else state = -1;
+		break;
+
+	case 33:
+		if( info.src.charCodeAt( pos ) == 110 ) state = 34;
+		else state = -1;
+		break;
+
+	case 34:
 		if( info.src.charCodeAt( pos ) == 116 ) state = 15;
 		else state = -1;
 		break;
