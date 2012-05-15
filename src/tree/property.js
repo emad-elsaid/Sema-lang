@@ -7,7 +7,11 @@ sema.tree.property = function(name,value,important){
 	this.render = function(){
 		var name = sema.utils.translator.translate(this.name);
 		var value = this.value
-						.map(function(item){ return typeof item=="string"? item : item.render();  })
+						.map(function(item){ 
+							return typeof item=="string"
+									? sema.utils.translator.translate(item)
+									: item.render();  
+						})
 						.join(' ');
 		var important = this.important? ' !important':'';					
 		
