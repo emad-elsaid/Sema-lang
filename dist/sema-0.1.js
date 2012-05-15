@@ -228,8 +228,8 @@ sema.utils.translator = {
 		'اخضر':'green',
 		'اعمدة-الشبكة':'grid-columns',
 		'صفوف-الشبكة':'grid-rows',
-		'':'groove',
-		'':'hanging-punctuation',
+		'اخدود':'groove',
+		'تعليق-علامات-التنقيط':'hanging-punctuation',
 		'عبرى':'hebrew',
 		'الارتفاع':'height',
 		'مساعدة':'help',
@@ -253,8 +253,8 @@ sema.utils.translator = {
 		'انش':'in',
 		'تضمين-مصدر':'include-source',
 		'ضمنى':'inline',
-		'':'inline-box-align',
-		'':'inline-line-height',
+		'محاذاة-صندوق-ضمنى':'inline-box-align',
+		'ارتفاع-صندوق-ضمنى':'inline-line-height',
 		'جدول-ضمنى':'inline-table',
 		'درج':'inset',
 		'داخلى':'inside',
@@ -267,15 +267,15 @@ sema.utils.translator = {
 		'كبير':'large',
 		'اكبر':'larger',
 		'الاخير':'last',
-		'':'layer-background-color',
-		'':'layer-background-image',
-		'':'layout-flow',
-		'':'layout-grid',
-		'':'layout-grid-char',
-		'':'layout-grid-char-spacing',
-		'':'layout-grid-line',
-		'':'layout-grid-mode',
-		'':'layout-grid-type',
+		'لون-خلفية-الطبقة':'layer-background-color',
+		'صورة-خلفية-الطبقة':'layer-background-image',
+		'تدفق-التصميم':'layout-flow',
+		'تصميم-الشبكة':'layout-grid',
+		'تصميم-حرف-الشبكة':'layout-grid-char',
+		'تصميم-تباعد-حرف-الشبكة':'layout-grid-char-spacing',
+		'تصميم-سطر-الشبكة':'layout-grid-line',
+		'نمط-تصميم-الشبكة':'layout-grid-mode',
+		'نوع-تصميم-الشبكة':'layout-grid-type',
 		'يسار':'left',
 		'الجانب-الايسر':'left-side',
 		'اتجاه-اليسار':'leftwards',
@@ -286,14 +286,14 @@ sema.utils.translator = {
 		'فاصل-السطر':'line-break',
 		'ارتفاع-السطر':'line-height',
 		'تراص-السطور':'line-stacking',
-		'':'line-stacking-shift',
-		'':'line-stacking-strategy',
-		'':'line-through',
-		'':'list-item',
-		'':'list-style',
-		'':'list-style-image',
-		'':'list-style-position',
-		'':'list-style-type',
+		'إزاحة-تراص-السطور':'line-stacking-shift',
+		'استراتيجية-تراص-السطور':'line-stacking-strategy',
+		'خط-وسط':'line-through',
+		'عنصر-قائمة':'list-item',
+		'شكل-القائمة':'list-style',
+		'صورة-شكل-القائمة':'list-style-image',
+		'مكان-شكل-القائمة':'list-style-position',
+		'نوع-شكل-القائمة':'list-style-type',
 		'صاخب':'loud',
 		'منخفض':'low',
 		'اكتر-انخفاض':'lower',
@@ -308,15 +308,15 @@ sema.utils.translator = {
 		'الهامش-الايسر':'margin-left',
 		'الهامش-الايمن':'margin-right',
 		'الهامش-العلوى':'margin-top',
-		'':'marker',
-		'':'marker-offset',
-		'':'marks',
+		'علامة':'marker',
+		'بعد-العلامة':'marker-offset',
+		'علامات':'marks',
 		'نبيتى':'maroon',
-		'':'marquee-direction',
-		'':'marquee-loop',
-		'':'marquee-play-count',
-		'':'marquee-speed',
-		'':'marquee-style',
+		'اتجاه-الشريط':'marquee-direction',
+		'دورة-الشريط':'marquee-loop',
+		'عدد-مرات-تشغيل-الشريط':'marquee-play-count',
+		'شرعة-الشريط':'marquee-speed',
+		'شكل-الشريط':'marquee-style',
 		'اكبر-ارتفاع':'max-height',
 		'اكبر-عرض':'max-width',
 		'متوسط':'medium',
@@ -325,38 +325,38 @@ sema.utils.translator = {
 		'اقل-عرض':'min-width',
 		'مزيج':'mix',
 		'ملليمتر':'mm',
-		'':'moderate',
+		'معتدل':'moderate',
 		'تحريك':'move',
 		'حرك-الى':'move-to',
 		'تحجيم-شمال':'n-resize',
 		'ضيق':'narrower',
-		'':'nav-down',
-		'':'nav-index',
-		'':'nav-left',
-		'':'nav-right',
-		'':'nav-up',
+		'انتقال-للاسفل':'nav-down',
+		'انتقال-للفهرس':'nav-index',
+		'انتقال-لليسار':'nav-left',
+		'انتقال-لليمين':'nav-right',
+		'انتقال-للاعلى':'nav-up',
 		'كحلى':'navy',
 		'تحجيم-شمال-الشرقى':'ne-resize',
-		'':'no-close-quote',
+		'بدون-اغلاق-علامة-تنصيص':'no-close-quote',
 		'بدون-حدود':'no-limit',
-		'':'no-open-quote',
+		'بدون-فتح-علامة-تنصيص':'no-open-quote',
 		'بدون-تكرار':'no-repeat',
 		'بدون':'none',
 		'عادى':'normal',
 		'بدون-التفاف':'nowrap',
 		'تحجيم-الشمال-الغربى':'nw-resize',
-		'':'oblique',
+		'مائل':'oblique',
 		'زيتونى':'olive',
 		'مرة':'once',
 		'الشفافية':'opacity',
 		'فتح':'open',
-		'':'open-quote',
-		'':'orphans',
-		'':'outline',
-		'':'outline-color',
-		'':'outline-offset',
-		'':'outline-style',
-		'':'outline-width',
+		'فتح-علامة-تنصيص':'open-quote',
+		'يتامى':'orphans',
+		'الخط-الخارجى':'outline',
+		'لون-الخط-الخارجى':'outline-color',
+		'بعد-الخط-الخارجى':'outline-offset',
+		'شكل-الخط-الخارجى':'outline-style',
+		'سمك-الخط-الخارجى':'outline-width',
 		'بداية':'outset',
 		'خارج':'outside',
 		'الزيادة':'overflow',
@@ -371,17 +371,17 @@ sema.utils.translator = {
 		'التبطين-الايمن':'padding-right',
 		'التبطين-العلوى':'padding-top',
 		'صفحة':'page',
-		'':'page-break-after',
-		'':'page-break-before',
-		'':'page-break-inside',
-		'':'page-policy',
-		'':'pause',
-		'':'pause-after',
-		'':'pause-before',
+		'فاصل-الصفحة-بعد':'page-break-after',
+		'فاصل-الصفحة-قبل':'page-break-before',
+		'فاصل-الصفحة-للداخل':'page-break-inside',
+		'سياسة-الصفحة':'page-policy',
+		'توقف':'pause',
+		'توقف-بعد':'pause-after',
+		'توقف-قبل':'pause-before',
 		'بيكا':'pc',
-		'':'perspective',
-		'':'perspective-origin',
-		'':'phonemes',
+		'المنظور':'perspective',
+		'نقطة-اصل-المنظور':'perspective-origin',
+		'نبرات':'phonemes',
 		'نغمة':'pitch',
 		'مدى-النغمة':'pitch-range',
 		'فترة-التشغيل':'play-during',
@@ -389,25 +389,25 @@ sema.utils.translator = {
 		'مكان':'position',
 		'لوحة':'portrait',
 		'سابقة':'pre',
-		'':'presentation-level',
+		'مستوى-العرض':'presentation-level',
 		'نقطة':'pt',
-		'':'punctuation-trim',
+		'قطع-علامات-الترقيم':'punctuation-trim',
 		'بنفسجى':'purple',
 		'بيكسل':'px',
-		'':'quotes',
+		'علامات-الاقتباس':'quotes',
 		'مستطيل':'rect',
 		'احمر':'red',
 		'نسبى':'relative',
-		'':'rendering-intent',
+		'نية-الاظهار':'rendering-intent',
 		'تكرار':'repeat',
 		'تكرار-س':'repeat-x',
 		'تكرار-ص':'repeat-y',
 		'تحجيم':'resize',
-		'':'rest',
-		'':'rest-after',
-		'':'rest-before',
-		'':'richness',
-		'':'ridge',
+		'استراحة':'rest',
+		'استرح-بعد':'rest-after',
+		'استرح-قبل':'rest-before',
+		'ثراء':'richness',
+		'ناتىء':'ridge',
 		'يمين':'right',
 		'الجانب-الايمن':'right-side',
 		'اتجاه-اليمين':'rightwards',
@@ -415,18 +415,18 @@ sema.utils.translator = {
 		'نقطة-التدوير':'rotation-point',
 		'صف':'row',
 		'من-اليمين-لليسار':'rtl',
-		'':'run-in',
+		'تشغيل-داخلى':'run-in',
 		'تشغيل':'running',
 		'تحجيم-جنوب':'s-resize',
-		'':'scroll',
-		'':'scrollbar-3d-light-color',
-		'':'scrollbar-arrow-color',
-		'':'scrollbar-base-color',
-		'':'scrollbar-dark-shadow-color',
-		'':'scrollbar-face-color',
-		'':'scrollbar-highlight-color',
-		'':'scrollbar-shadow-color',
-		'':'scrollbar-track-color',
+		'تمرير':'scroll',
+		'لون-ضوء-3دى-لشريط-التمرير':'scrollbar-3d-light-color',
+		'لون-السهم-لشريط-التمرير':'scrollbar-arrow-color',
+		'لون-الاساس-لشريط-التمرير':'scrollbar-base-color',
+		'لون-الظل-الغامق-لشريط-التمرير':'scrollbar-dark-shadow-color',
+		'لون-وجه-شريط-التمرير':'scrollbar-face-color',
+		'لون-شوء-شريط-التمرير':'scrollbar-highlight-color',
+		'لون-ظل-شريط-التمرير':'scrollbar-shadow-color',
+		'لون-مسار-شريط-التمرير':'scrollbar-track-color',
 		'تحجيم-جنوب-شرقى':'se-resize',
 		'شبه-كثيف':'semi-condensed',
 		'شبه-متمدد':'semi-expanded',
@@ -715,17 +715,16 @@ switch( state )
 	case 0:
 		if( ( info.src.charCodeAt( pos ) >= 9 && info.src.charCodeAt( pos ) <= 10 ) || info.src.charCodeAt( pos ) == 13 ) state = 1;
 		else if( info.src.charCodeAt( pos ) == 35 ) state = 2;
-		else if( info.src.charCodeAt( pos ) == 40 ) state = 3;
-		else if( info.src.charCodeAt( pos ) == 41 ) state = 4;
-		else if( info.src.charCodeAt( pos ) == 42 ) state = 5;
-		else if( info.src.charCodeAt( pos ) == 44 ) state = 6;
-		else if( info.src.charCodeAt( pos ) == 45 || ( info.src.charCodeAt( pos ) >= 48 && info.src.charCodeAt( pos ) <= 57 ) || ( info.src.charCodeAt( pos ) >= 65 && info.src.charCodeAt( pos ) <= 90 ) || info.src.charCodeAt( pos ) == 95 || ( info.src.charCodeAt( pos ) >= 97 && info.src.charCodeAt( pos ) <= 122 ) || ( info.src.charCodeAt( pos ) >= 1569 && info.src.charCodeAt( pos ) <= 1641 ) ) state = 7;
-		else if( info.src.charCodeAt( pos ) == 46 ) state = 8;
-		else if( info.src.charCodeAt( pos ) == 58 ) state = 9;
-		else if( info.src.charCodeAt( pos ) == 59 ) state = 10;
-		else if( info.src.charCodeAt( pos ) == 62 ) state = 11;
-		else if( info.src.charCodeAt( pos ) == 123 ) state = 12;
-		else if( info.src.charCodeAt( pos ) == 125 ) state = 13;
+		else if( info.src.charCodeAt( pos ) == 37 || ( info.src.charCodeAt( pos ) >= 45 && info.src.charCodeAt( pos ) <= 46 ) || ( info.src.charCodeAt( pos ) >= 48 && info.src.charCodeAt( pos ) <= 57 ) || ( info.src.charCodeAt( pos ) >= 65 && info.src.charCodeAt( pos ) <= 90 ) || info.src.charCodeAt( pos ) == 95 || ( info.src.charCodeAt( pos ) >= 97 && info.src.charCodeAt( pos ) <= 122 ) || ( info.src.charCodeAt( pos ) >= 1569 && info.src.charCodeAt( pos ) <= 1641 ) ) state = 3;
+		else if( info.src.charCodeAt( pos ) == 40 ) state = 4;
+		else if( info.src.charCodeAt( pos ) == 41 ) state = 5;
+		else if( info.src.charCodeAt( pos ) == 42 ) state = 6;
+		else if( info.src.charCodeAt( pos ) == 44 ) state = 7;
+		else if( info.src.charCodeAt( pos ) == 58 ) state = 8;
+		else if( info.src.charCodeAt( pos ) == 59 || info.src.charCodeAt( pos ) == 1563 ) state = 9;
+		else if( info.src.charCodeAt( pos ) == 62 ) state = 10;
+		else if( info.src.charCodeAt( pos ) == 123 ) state = 11;
+		else if( info.src.charCodeAt( pos ) == 125 ) state = 12;
 		else if( info.src.charCodeAt( pos ) == 33 ) state = 16;
 		else if( info.src.charCodeAt( pos ) == 32 ) state = 17;
 		else if( info.src.charCodeAt( pos ) == 34 ) state = 19;
@@ -747,69 +746,69 @@ switch( state )
 		break;
 
 	case 3:
-		state = -1;
-		match = 11;
-		match_pos = pos;
-		break;
-
-	case 4:
-		state = -1;
-		match = 12;
-		match_pos = pos;
-		break;
-
-	case 5:
-		state = -1;
-		match = 14;
-		match_pos = pos;
-		break;
-
-	case 6:
-		state = -1;
-		match = 6;
-		match_pos = pos;
-		break;
-
-	case 7:
-		if( info.src.charCodeAt( pos ) == 45 || ( info.src.charCodeAt( pos ) >= 48 && info.src.charCodeAt( pos ) <= 57 ) || ( info.src.charCodeAt( pos ) >= 65 && info.src.charCodeAt( pos ) <= 90 ) || info.src.charCodeAt( pos ) == 95 || ( info.src.charCodeAt( pos ) >= 97 && info.src.charCodeAt( pos ) <= 122 ) || ( info.src.charCodeAt( pos ) >= 1569 && info.src.charCodeAt( pos ) <= 1641 ) ) state = 7;
+		if( info.src.charCodeAt( pos ) == 37 || ( info.src.charCodeAt( pos ) >= 45 && info.src.charCodeAt( pos ) <= 46 ) || ( info.src.charCodeAt( pos ) >= 48 && info.src.charCodeAt( pos ) <= 57 ) || ( info.src.charCodeAt( pos ) >= 65 && info.src.charCodeAt( pos ) <= 90 ) || info.src.charCodeAt( pos ) == 95 || ( info.src.charCodeAt( pos ) >= 97 && info.src.charCodeAt( pos ) <= 122 ) || ( info.src.charCodeAt( pos ) >= 1569 && info.src.charCodeAt( pos ) <= 1641 ) ) state = 3;
 		else state = -1;
 		match = 2;
 		match_pos = pos;
 		break;
 
-	case 8:
+	case 4:
 		state = -1;
-		match = 9;
+		match = 11;
 		match_pos = pos;
 		break;
 
-	case 9:
+	case 5:
+		state = -1;
+		match = 12;
+		match_pos = pos;
+		break;
+
+	case 6:
+		state = -1;
+		match = 14;
+		match_pos = pos;
+		break;
+
+	case 7:
+		state = -1;
+		match = 6;
+		match_pos = pos;
+		break;
+
+	case 8:
 		state = -1;
 		match = 8;
 		match_pos = pos;
 		break;
 
-	case 10:
+	case 9:
 		state = -1;
 		match = 13;
 		match_pos = pos;
 		break;
 
-	case 11:
+	case 10:
 		state = -1;
 		match = 10;
 		match_pos = pos;
 		break;
 
-	case 12:
+	case 11:
 		state = -1;
 		match = 4;
 		match_pos = pos;
 		break;
 
-	case 13:
+	case 12:
 		state = -1;
 		match = 5;
+		match_pos = pos;
+		break;
+
+	case 13:
+		state = -1;
+		match = 9;
 		match_pos = pos;
 		break;
 
@@ -827,12 +826,13 @@ switch( state )
 
 	case 16:
 		if( info.src.charCodeAt( pos ) == 105 ) state = 24;
+		else if( info.src.charCodeAt( pos ) == 1605 ) state = 25;
 		else state = -1;
 		break;
 
 	case 17:
 		if( info.src.charCodeAt( pos ) == 35 ) state = 2;
-		else if( info.src.charCodeAt( pos ) == 46 ) state = 8;
+		else if( info.src.charCodeAt( pos ) == 46 ) state = 13;
 		else if( info.src.charCodeAt( pos ) == 32 ) state = 23;
 		else state = -1;
 		match = 1;
@@ -842,7 +842,7 @@ switch( state )
 	case 18:
 		if( info.src.charCodeAt( pos ) == 34 ) state = 14;
 		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 33 ) || ( info.src.charCodeAt( pos ) >= 35 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 19;
-		else if( info.src.charCodeAt( pos ) == 92 ) state = 25;
+		else if( info.src.charCodeAt( pos ) == 92 ) state = 26;
 		else state = -1;
 		match = 3;
 		match_pos = pos;
@@ -851,14 +851,14 @@ switch( state )
 	case 19:
 		if( info.src.charCodeAt( pos ) == 34 ) state = 14;
 		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 33 ) || ( info.src.charCodeAt( pos ) >= 35 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 19;
-		else if( info.src.charCodeAt( pos ) == 92 ) state = 25;
+		else if( info.src.charCodeAt( pos ) == 92 ) state = 26;
 		else state = -1;
 		break;
 
 	case 20:
 		if( info.src.charCodeAt( pos ) == 39 ) state = 14;
 		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 38 ) || ( info.src.charCodeAt( pos ) >= 40 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 21;
-		else if( info.src.charCodeAt( pos ) == 92 ) state = 26;
+		else if( info.src.charCodeAt( pos ) == 92 ) state = 27;
 		else state = -1;
 		match = 3;
 		match_pos = pos;
@@ -867,78 +867,100 @@ switch( state )
 	case 21:
 		if( info.src.charCodeAt( pos ) == 39 ) state = 14;
 		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 38 ) || ( info.src.charCodeAt( pos ) >= 40 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 21;
-		else if( info.src.charCodeAt( pos ) == 92 ) state = 26;
+		else if( info.src.charCodeAt( pos ) == 92 ) state = 27;
 		else state = -1;
 		break;
 
 	case 22:
-		if( info.src.charCodeAt( pos ) == 47 ) state = 27;
+		if( info.src.charCodeAt( pos ) == 42 ) state = 28;
+		else if( info.src.charCodeAt( pos ) == 47 ) state = 29;
 		else state = -1;
 		break;
 
 	case 23:
 		if( info.src.charCodeAt( pos ) == 35 ) state = 2;
-		else if( info.src.charCodeAt( pos ) == 46 ) state = 8;
+		else if( info.src.charCodeAt( pos ) == 46 ) state = 13;
 		else if( info.src.charCodeAt( pos ) == 32 ) state = 23;
 		else state = -1;
 		break;
 
 	case 24:
-		if( info.src.charCodeAt( pos ) == 109 ) state = 28;
+		if( info.src.charCodeAt( pos ) == 109 ) state = 30;
 		else state = -1;
 		break;
 
 	case 25:
-		if( info.src.charCodeAt( pos ) == 34 ) state = 18;
-		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 33 ) || ( info.src.charCodeAt( pos ) >= 35 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 19;
-		else if( info.src.charCodeAt( pos ) == 92 ) state = 25;
+		if( info.src.charCodeAt( pos ) == 1607 ) state = 31;
 		else state = -1;
 		break;
 
 	case 26:
-		if( info.src.charCodeAt( pos ) == 39 ) state = 20;
-		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 38 ) || ( info.src.charCodeAt( pos ) >= 40 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 21;
+		if( info.src.charCodeAt( pos ) == 34 ) state = 18;
+		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 33 ) || ( info.src.charCodeAt( pos ) >= 35 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 19;
 		else if( info.src.charCodeAt( pos ) == 92 ) state = 26;
 		else state = -1;
 		break;
 
 	case 27:
-		if( info.src.charCodeAt( pos ) == 10 ) state = 1;
-		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 9 ) || ( info.src.charCodeAt( pos ) >= 11 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 27;
+		if( info.src.charCodeAt( pos ) == 39 ) state = 20;
+		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 38 ) || ( info.src.charCodeAt( pos ) >= 40 && info.src.charCodeAt( pos ) <= 91 ) || ( info.src.charCodeAt( pos ) >= 93 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 21;
+		else if( info.src.charCodeAt( pos ) == 92 ) state = 27;
 		else state = -1;
 		break;
 
 	case 28:
-		if( info.src.charCodeAt( pos ) == 112 ) state = 29;
+		if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 41 ) || ( info.src.charCodeAt( pos ) >= 43 && info.src.charCodeAt( pos ) <= 46 ) || ( info.src.charCodeAt( pos ) >= 48 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 28;
+		else if( info.src.charCodeAt( pos ) == 42 ) state = 32;
 		else state = -1;
 		break;
 
 	case 29:
-		if( info.src.charCodeAt( pos ) == 111 ) state = 30;
+		if( info.src.charCodeAt( pos ) == 10 ) state = 1;
+		else if( ( info.src.charCodeAt( pos ) >= 0 && info.src.charCodeAt( pos ) <= 9 ) || ( info.src.charCodeAt( pos ) >= 11 && info.src.charCodeAt( pos ) <= 1699 ) ) state = 29;
 		else state = -1;
 		break;
 
 	case 30:
-		if( info.src.charCodeAt( pos ) == 114 ) state = 31;
+		if( info.src.charCodeAt( pos ) == 112 ) state = 33;
 		else state = -1;
 		break;
 
 	case 31:
-		if( info.src.charCodeAt( pos ) == 116 ) state = 32;
+		if( info.src.charCodeAt( pos ) == 1605 ) state = 15;
 		else state = -1;
 		break;
 
 	case 32:
-		if( info.src.charCodeAt( pos ) == 97 ) state = 33;
+		if( info.src.charCodeAt( pos ) == 47 ) state = 1;
 		else state = -1;
 		break;
 
 	case 33:
-		if( info.src.charCodeAt( pos ) == 110 ) state = 34;
+		if( info.src.charCodeAt( pos ) == 111 ) state = 34;
 		else state = -1;
 		break;
 
 	case 34:
+		if( info.src.charCodeAt( pos ) == 114 ) state = 35;
+		else state = -1;
+		break;
+
+	case 35:
+		if( info.src.charCodeAt( pos ) == 116 ) state = 36;
+		else state = -1;
+		break;
+
+	case 36:
+		if( info.src.charCodeAt( pos ) == 97 ) state = 37;
+		else state = -1;
+		break;
+
+	case 37:
+		if( info.src.charCodeAt( pos ) == 110 ) state = 38;
+		else state = -1;
+		break;
+
+	case 38:
 		if( info.src.charCodeAt( pos ) == 116 ) state = 15;
 		else state = -1;
 		break;

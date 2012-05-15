@@ -237,7 +237,7 @@ sema.utils.translator = {
 		'تضمين-مصدر':'include-source',
 		'ضمنى':'inline',
 		'محاذاة-صندوق-ضمنى':'inline-box-align',
-		'ارتفاع-صندوق-ضمنى':'inline-line-height'
+		'ارتفاع-صندوق-ضمنى':'inline-line-height',
 		'جدول-ضمنى':'inline-table',
 		'درج':'inset',
 		'داخلى':'inside',

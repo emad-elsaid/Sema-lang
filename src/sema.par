@@ -6,9 +6,9 @@ sema.parse = function(src){
 	var result;
 *]
 
-!	' |\r|\n|\t|//[^\n]*\n'
+!	' |\r|\n|\t|//[^\n]*\n|/\*[^\*/]*\*/'
 
-	'[\1569-\1641a-zA-Z0-9_\-]+'					identifier
+	'[\1569-\1641a-zA-Z0-9_%\.\-]+'					identifier
 	'(\"([^\"]|\\\")*\")|(\'([^\']|\\\')*\')'		string
 	'{'
 	'}'
@@ -19,9 +19,9 @@ sema.parse = function(src){
 	'>'
 	'\('
 	'\)'
-	';'												line_terminal
+	';|\1563'										line_terminal
 	'\*'
-	'!important'									important
+	'!((important)|(\1605\1607\1605))'				important
 	;
 	
 ##
