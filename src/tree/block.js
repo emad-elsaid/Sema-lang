@@ -14,13 +14,17 @@ sema.tree.block = function(selector,properties){
 		// get selector string
 		var selector = this.selector
 							.map(function(item,index){
-								return (
-									index>0
-									&&(!item.isSeparator())
-									&&(!me.selector[index-1].isSeparator())
-									? ' '
-									: ''
-								) + item.render();
+								var prefix = index>0
+											&&(!item.isSeparator())
+											&&(!me.selector[index-1].isSeparator())
+											? ' '
+											: '';
+								var translate = index>0
+											&&(!item.isSeparator())
+											&&me.selector[index-1].isPseudoPrefix()
+											? true
+											: false;
+								return prefix + item.render(translate);
 							})
 							.join('');
 		

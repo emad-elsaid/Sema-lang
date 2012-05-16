@@ -5,8 +5,9 @@
 <head>
 	<title>Sema test</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<script type="text/javascript" src="../dist/sema-0.1.js"></script>
+	<link rel="stylesheet/sema" type="text/css" href="style.sema">
 	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../dist/sema-0.1.js"></script>
 	<script type="text/javascript">
 	function parse(){
 		var output = sema.parse($('#input').val())
@@ -134,6 +135,10 @@ div {
 	الهامش : 5بيكسل 10بيكسل !مهم;
 }
 
+div:نشط{
+	الحدود: 1بيكسل احمر مصمت;
+	الهامش : 5بيكسل 10بيكسل !مهم;
+}
 </textarea>
 			</td>
 			<td>

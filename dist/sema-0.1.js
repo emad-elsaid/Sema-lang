@@ -15,6 +15,37 @@
 var sema = new Object();
 sema.utils = {};
 sema.tree = {};
+sema.utils.loader = {
+		
+	getSemaFiles : function(){
+		var files = [];
+		for( var i=0; i<document.getElementsByTagName("link").length; i++){
+			if( document.getElementsByTagName("link")[i].rel=='stylesheet/sema'){
+				files.push(document.getElementsByTagName("link")[i].href);
+			}
+		};
+		return files;
+	},
+	
+	load: function(url,callback){
+		$.get(url,callback);
+	},
+	
+	loadSemaFiles : function(){
+		var me = this;
+		this.getSemaFiles().forEach(function(url){
+			me.load(url,me.inject);
+		});
+		
+	},
+	
+	inject : function(semaText){
+		var css = sema.parse(semaText).result.render();
+		var style = document.createElement('style');
+		style.appendChild(document.createTextNode(css));
+		document.body.appendChild(style);
+	}
+};
 sema.utils.translator = {
 
 	table:{
@@ -585,13 +616,17 @@ sema.tree.block = function(selector,properties){
 		// get selector string
 		var selector = this.selector
 							.map(function(item,index){
-								return (
-									index>0
-									&&(!item.isSeparator())
-									&&(!me.selector[index-1].isSeparator())
-									? ' '
-									: ''
-								) + item.render();
+								var prefix = index>0
+											&&(!item.isSeparator())
+											&&(!me.selector[index-1].isSeparator())
+											? ' '
+											: '';
+								var translate = index>0
+											&&(!item.isSeparator())
+											&&me.selector[index-1].isPseudoPrefix()
+											? true
+											: false;
+								return prefix + item.render(translate);
 							})
 							.join('');
 		
@@ -664,13 +699,19 @@ sema.tree.selector = function(identifier){
 		return this.identifier;
 	}
 	
-	this.render = function(){
-		return this.identifier;
+	this.render = function(translate){
+		return translate==true
+				? sema.utils.translator.translate(this.identifier)
+				:this.identifier;
 	}
 	
 	this.isSeparator = function(){
 		var identifier = this.identifier.trim();
 		return ['#','>','.',':',','].indexOf(identifier)>-1;
+	}
+	
+	this.isPseudoPrefix = function(){
+		return this.identifier.trim()==':';
 	}
 }
 
@@ -1639,4 +1680,4 @@ if( ( error_count = __parse( str,
 }
 
 
-
+sema.utils.loader.loadSemaFiles();
