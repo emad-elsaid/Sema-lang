@@ -8,7 +8,7 @@ sema.parse = function(src){
 
 !	' |\r|\n|\t|//[^\n]*\n|/\*[^\*/]*\*/'
 
-	'[\1569-\1641a-zA-Z\-]+[\1569-\1641a-zA-Z0-9_\-]*'			identifier
+	'[\1569-\1641a-zA-Z\.\-]+[\1569-\1641a-zA-Z0-9_\-]*'		identifier
 	'\-?[0-9\.]+[\1569-\1641a-zA-Z0-9%]*'						measurement		[* %match = new sema.tree.measurement(%match); *]
 	'(\"([^\"]|\\\")*\")|(\'([^\']|\\\')*\')'					string
 	'{'
