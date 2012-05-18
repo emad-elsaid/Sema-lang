@@ -1,5 +1,35 @@
+/*
+ *      translator.js
+ *      
+ *      Copyright 2012 Blaze Boy <blazeeboy@gmail.com>
+ *      
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *      
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *      
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ *      
+ *      @Description : tranlator in an object that contain tokens table
+ * 		and able to translate these tokens into their css alternative.
+ * 		@Package : Sema utilities
+ */
+
 sema.utils.translator = {
 
+	/**
+	 * this table contain arabic token as key and english alternative
+	 * as value, you can use it to translate arabic into english and
+	 * vice versa.
+	 */
 	table:{
 		'نشط':'active',
 		'بعد':'after',
@@ -542,12 +572,23 @@ sema.utils.translator = {
 		'اصفر':'yellow',
 		'البعد-ع':'z-index',
 		'تقريب':'zoom',
+		'%':'%'
 	},
 
+	/**
+	 * translate an identifier from arabic into english
+	 * it will return the identifier untranslated as it is
+	 * if not found in the table
+	 */
 	translate: function(identifier){
-		return this.table[identifier]!=undefined
-					? this.table[identifier]
-					: identifier;
+		
+		if(this.table[identifier]!=undefined){
+			return this.table[identifier];
+		}else{
+			// log a message to console of we couldn't find the identifier
+			console.log( "couldn't find the token :"+identifier );
+			return identifier;
+		}
 	}
 	
 };
