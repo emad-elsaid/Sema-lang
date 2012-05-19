@@ -36,6 +36,7 @@ sema.tree.func = function(name,params){
 	 * @return <String> : css calue of the function
 	 */
 	this.render = function(){
-		return this.name+'('+this.params.join(',')+')';
+		var name = sema.utils.translator.translate(this.name);
+		return name+'('+this.params.join(',')+')';
 	}
 }
