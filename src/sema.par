@@ -9,7 +9,7 @@ sema.parse = function(src){
 !	' |\r|\n|\t|//[^\n]*\n|/\*[^\*/]*\*/'
 
 	'[\1569-\1641a-zA-Z\.\-]+[\1569-\1641a-zA-Z0-9_\-]*'		identifier
-	'\-?[0-9\.]+[\1569-\1641a-zA-Z0-9%]*'						measurement		[* %match = new sema.tree.measurement(%match); *]
+	'\-?[0-9\.]+[\1569-\1641a-zA-Z%]*'						measurement		[* %match = new sema.tree.measurement(%match); *]
 	'(\"([^\"]|\\\")*\")|(\'([^\']|\\\')*\')'					string
 	'{'
 	'}'
@@ -65,13 +65,14 @@ param			: color
 				| string
 				;
 				
-color			:id_sign identifier							[* %% = '#'+%2 *]
+color			:id_sign identifier							[* %% = '#'+%2; *]
+				|id_sign measurement						[* %% = '#'+%2.render(); *]
 				;
 				
 separator		:','|id_sign|class_sign|':'|'>';
 
 properties_list	:properties_list property					[* %% = %1;%1.push(%2); *]
-				|property									[* %% = [%1] *]
+				|property									[* %% = [%1]; *]
 				;
 
 property		:identifier ':'	identifier_list	important_sign line_terminal	[* %% = new sema.tree.property(%1,%3,%4); *]

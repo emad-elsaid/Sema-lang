@@ -1363,7 +1363,7 @@ switch( state )
 		break;
 
 	case 20:
-		if( info.src.charCodeAt( pos ) == 37 || ( info.src.charCodeAt( pos ) >= 48 && info.src.charCodeAt( pos ) <= 57 ) || ( info.src.charCodeAt( pos ) >= 65 && info.src.charCodeAt( pos ) <= 90 ) || ( info.src.charCodeAt( pos ) >= 97 && info.src.charCodeAt( pos ) <= 122 ) || ( info.src.charCodeAt( pos ) >= 1569 && info.src.charCodeAt( pos ) <= 1641 ) ) state = 20;
+		if( info.src.charCodeAt( pos ) == 37 || ( info.src.charCodeAt( pos ) >= 65 && info.src.charCodeAt( pos ) <= 90 ) || ( info.src.charCodeAt( pos ) >= 97 && info.src.charCodeAt( pos ) <= 122 ) || ( info.src.charCodeAt( pos ) >= 1569 && info.src.charCodeAt( pos ) <= 1641 ) ) state = 20;
 		else state = -1;
 		match = 3;
 		match_pos = pos;
@@ -1427,9 +1427,8 @@ switch( state )
 
 	case 28:
 		if( info.src.charCodeAt( pos ) == 37 ) state = 20;
-		else if( info.src.charCodeAt( pos ) == 95 ) state = 26;
+		else if( ( info.src.charCodeAt( pos ) >= 48 && info.src.charCodeAt( pos ) <= 57 ) || info.src.charCodeAt( pos ) == 95 ) state = 26;
 		else if( ( info.src.charCodeAt( pos ) >= 65 && info.src.charCodeAt( pos ) <= 90 ) || ( info.src.charCodeAt( pos ) >= 97 && info.src.charCodeAt( pos ) <= 122 ) || ( info.src.charCodeAt( pos ) >= 1569 && info.src.charCodeAt( pos ) <= 1641 ) ) state = 28;
-		else if( ( info.src.charCodeAt( pos ) >= 48 && info.src.charCodeAt( pos ) <= 57 ) ) state = 30;
 		else if( ( info.src.charCodeAt( pos ) >= 45 && info.src.charCodeAt( pos ) <= 46 ) ) state = 46;
 		else state = -1;
 		match = 2;
@@ -1445,8 +1444,8 @@ switch( state )
 
 	case 30:
 		if( info.src.charCodeAt( pos ) == 37 ) state = 20;
-		else if( info.src.charCodeAt( pos ) == 45 || info.src.charCodeAt( pos ) == 95 ) state = 26;
-		else if( ( info.src.charCodeAt( pos ) >= 48 && info.src.charCodeAt( pos ) <= 57 ) || ( info.src.charCodeAt( pos ) >= 65 && info.src.charCodeAt( pos ) <= 90 ) || ( info.src.charCodeAt( pos ) >= 97 && info.src.charCodeAt( pos ) <= 122 ) || ( info.src.charCodeAt( pos ) >= 1569 && info.src.charCodeAt( pos ) <= 1641 ) ) state = 30;
+		else if( info.src.charCodeAt( pos ) == 45 || ( info.src.charCodeAt( pos ) >= 48 && info.src.charCodeAt( pos ) <= 57 ) || info.src.charCodeAt( pos ) == 95 ) state = 26;
+		else if( ( info.src.charCodeAt( pos ) >= 65 && info.src.charCodeAt( pos ) <= 90 ) || ( info.src.charCodeAt( pos ) >= 97 && info.src.charCodeAt( pos ) <= 122 ) || ( info.src.charCodeAt( pos ) >= 1569 && info.src.charCodeAt( pos ) <= 1641 ) ) state = 30;
 		else state = -1;
 		match = 2;
 		match_pos = pos;
@@ -1616,6 +1615,7 @@ var pop_tab = new Array(
 	new Array( 27/* param */, 1 ),
 	new Array( 27/* param */, 1 ),
 	new Array( 25/* color */, 2 ),
+	new Array( 25/* color */, 2 ),
 	new Array( 26/* separator */, 1 ),
 	new Array( 26/* separator */, 1 ),
 	new Array( 26/* separator */, 1 ),
@@ -1642,37 +1642,38 @@ var act_tab = new Array(
 	/* State 9 */ new Array( 5/* "{" */,-13 , 2/* "identifier" */,-13 , 3/* "measurement" */,-13 , 15/* "*" */,-13 , 8/* "id_sign" */,-13 , 7/* "," */,-13 , 10/* "class_sign" */,-13 , 9/* ":" */,-13 , 11/* ">" */,-13 , 16/* "important" */,-13 , 14/* "line_terminal" */,-13 ),
 	/* State 10 */ new Array( 5/* "{" */,-14 , 2/* "identifier" */,-14 , 3/* "measurement" */,-14 , 15/* "*" */,-14 , 8/* "id_sign" */,-14 , 7/* "," */,-14 , 10/* "class_sign" */,-14 , 9/* ":" */,-14 , 11/* ">" */,-14 , 16/* "important" */,-14 , 14/* "line_terminal" */,-14 ),
 	/* State 11 */ new Array( 5/* "{" */,-15 , 2/* "identifier" */,-15 , 3/* "measurement" */,-15 , 15/* "*" */,-15 , 8/* "id_sign" */,-15 , 7/* "," */,-15 , 10/* "class_sign" */,-15 , 9/* ":" */,-15 , 11/* ">" */,-15 , 16/* "important" */,-15 , 14/* "line_terminal" */,-15 ),
-	/* State 12 */ new Array( 2/* "identifier" */,21 , 5/* "{" */,-24 , 3/* "measurement" */,-24 , 15/* "*" */,-24 , 8/* "id_sign" */,-24 , 7/* "," */,-24 , 10/* "class_sign" */,-24 , 9/* ":" */,-24 , 11/* ">" */,-24 , 16/* "important" */,-24 , 14/* "line_terminal" */,-24 ),
-	/* State 13 */ new Array( 5/* "{" */,-23 , 2/* "identifier" */,-23 , 3/* "measurement" */,-23 , 15/* "*" */,-23 , 8/* "id_sign" */,-23 , 7/* "," */,-23 , 10/* "class_sign" */,-23 , 9/* ":" */,-23 , 11/* ">" */,-23 , 16/* "important" */,-23 , 14/* "line_terminal" */,-23 ),
-	/* State 14 */ new Array( 5/* "{" */,-25 , 2/* "identifier" */,-25 , 3/* "measurement" */,-25 , 15/* "*" */,-25 , 8/* "id_sign" */,-25 , 7/* "," */,-25 , 10/* "class_sign" */,-25 , 9/* ":" */,-25 , 11/* ">" */,-25 , 16/* "important" */,-25 , 14/* "line_terminal" */,-25 ),
-	/* State 15 */ new Array( 5/* "{" */,-26 , 2/* "identifier" */,-26 , 3/* "measurement" */,-26 , 15/* "*" */,-26 , 8/* "id_sign" */,-26 , 7/* "," */,-26 , 10/* "class_sign" */,-26 , 9/* ":" */,-26 , 11/* ">" */,-26 , 16/* "important" */,-26 , 14/* "line_terminal" */,-26 ),
-	/* State 16 */ new Array( 5/* "{" */,-27 , 2/* "identifier" */,-27 , 3/* "measurement" */,-27 , 15/* "*" */,-27 , 8/* "id_sign" */,-27 , 7/* "," */,-27 , 10/* "class_sign" */,-27 , 9/* ":" */,-27 , 11/* ">" */,-27 , 16/* "important" */,-27 , 14/* "line_terminal" */,-27 ),
+	/* State 12 */ new Array( 3/* "measurement" */,21 , 2/* "identifier" */,22 , 5/* "{" */,-25 , 15/* "*" */,-25 , 8/* "id_sign" */,-25 , 7/* "," */,-25 , 10/* "class_sign" */,-25 , 9/* ":" */,-25 , 11/* ">" */,-25 , 16/* "important" */,-25 , 14/* "line_terminal" */,-25 ),
+	/* State 13 */ new Array( 5/* "{" */,-24 , 2/* "identifier" */,-24 , 3/* "measurement" */,-24 , 15/* "*" */,-24 , 8/* "id_sign" */,-24 , 7/* "," */,-24 , 10/* "class_sign" */,-24 , 9/* ":" */,-24 , 11/* ">" */,-24 , 16/* "important" */,-24 , 14/* "line_terminal" */,-24 ),
+	/* State 14 */ new Array( 5/* "{" */,-26 , 2/* "identifier" */,-26 , 3/* "measurement" */,-26 , 15/* "*" */,-26 , 8/* "id_sign" */,-26 , 7/* "," */,-26 , 10/* "class_sign" */,-26 , 9/* ":" */,-26 , 11/* ">" */,-26 , 16/* "important" */,-26 , 14/* "line_terminal" */,-26 ),
+	/* State 15 */ new Array( 5/* "{" */,-27 , 2/* "identifier" */,-27 , 3/* "measurement" */,-27 , 15/* "*" */,-27 , 8/* "id_sign" */,-27 , 7/* "," */,-27 , 10/* "class_sign" */,-27 , 9/* ":" */,-27 , 11/* ">" */,-27 , 16/* "important" */,-27 , 14/* "line_terminal" */,-27 ),
+	/* State 16 */ new Array( 5/* "{" */,-28 , 2/* "identifier" */,-28 , 3/* "measurement" */,-28 , 15/* "*" */,-28 , 8/* "id_sign" */,-28 , 7/* "," */,-28 , 10/* "class_sign" */,-28 , 9/* ":" */,-28 , 11/* ">" */,-28 , 16/* "important" */,-28 , 14/* "line_terminal" */,-28 ),
 	/* State 17 */ new Array( 30/* "$" */,-3 , 2/* "identifier" */,-3 , 3/* "measurement" */,-3 , 15/* "*" */,-3 , 8/* "id_sign" */,-3 , 7/* "," */,-3 , 10/* "class_sign" */,-3 , 9/* ":" */,-3 , 11/* ">" */,-3 ),
-	/* State 18 */ new Array( 6/* "}" */,23 , 2/* "identifier" */,25 ),
+	/* State 18 */ new Array( 6/* "}" */,24 , 2/* "identifier" */,26 ),
 	/* State 19 */ new Array( 5/* "{" */,-8 , 2/* "identifier" */,-8 , 3/* "measurement" */,-8 , 15/* "*" */,-8 , 8/* "id_sign" */,-8 , 7/* "," */,-8 , 10/* "class_sign" */,-8 , 9/* ":" */,-8 , 11/* ">" */,-8 , 16/* "important" */,-8 , 14/* "line_terminal" */,-8 ),
-	/* State 20 */ new Array( 2/* "identifier" */,29 , 3/* "measurement" */,30 , 4/* "string" */,31 , 8/* "id_sign" */,32 ),
-	/* State 21 */ new Array( 5/* "{" */,-22 , 2/* "identifier" */,-22 , 3/* "measurement" */,-22 , 15/* "*" */,-22 , 8/* "id_sign" */,-22 , 7/* "," */,-22 , 10/* "class_sign" */,-22 , 9/* ":" */,-22 , 11/* ">" */,-22 , 13/* ")" */,-22 , 16/* "important" */,-22 , 14/* "line_terminal" */,-22 ),
-	/* State 22 */ new Array( 6/* "}" */,34 , 2/* "identifier" */,25 ),
-	/* State 23 */ new Array( 30/* "$" */,-6 , 2/* "identifier" */,-6 , 3/* "measurement" */,-6 , 15/* "*" */,-6 , 8/* "id_sign" */,-6 , 7/* "," */,-6 , 10/* "class_sign" */,-6 , 9/* ":" */,-6 , 11/* ">" */,-6 ),
-	/* State 24 */ new Array( 6/* "}" */,-29 , 2/* "identifier" */,-29 ),
-	/* State 25 */ new Array( 9/* ":" */,35 ),
-	/* State 26 */ new Array( 7/* "," */,36 , 13/* ")" */,37 ),
-	/* State 27 */ new Array( 13/* ")" */,-17 , 7/* "," */,-17 ),
-	/* State 28 */ new Array( 13/* ")" */,-18 , 7/* "," */,-18 ),
-	/* State 29 */ new Array( 13/* ")" */,-19 , 7/* "," */,-19 ),
-	/* State 30 */ new Array( 13/* ")" */,-20 , 7/* "," */,-20 ),
-	/* State 31 */ new Array( 13/* ")" */,-21 , 7/* "," */,-21 ),
-	/* State 32 */ new Array( 2/* "identifier" */,21 ),
-	/* State 33 */ new Array( 6/* "}" */,-28 , 2/* "identifier" */,-28 ),
-	/* State 34 */ new Array( 30/* "$" */,-5 , 2/* "identifier" */,-5 , 3/* "measurement" */,-5 , 15/* "*" */,-5 , 8/* "id_sign" */,-5 , 7/* "," */,-5 , 10/* "class_sign" */,-5 , 9/* ":" */,-5 , 11/* ">" */,-5 ),
-	/* State 35 */ new Array( 2/* "identifier" */,7 , 3/* "measurement" */,8 , 15/* "*" */,11 , 8/* "id_sign" */,12 , 7/* "," */,13 , 10/* "class_sign" */,14 , 9/* ":" */,15 , 11/* ">" */,16 ),
-	/* State 36 */ new Array( 2/* "identifier" */,29 , 3/* "measurement" */,30 , 4/* "string" */,31 , 8/* "id_sign" */,32 ),
-	/* State 37 */ new Array( 5/* "{" */,-10 , 2/* "identifier" */,-10 , 3/* "measurement" */,-10 , 15/* "*" */,-10 , 8/* "id_sign" */,-10 , 7/* "," */,-10 , 10/* "class_sign" */,-10 , 9/* ":" */,-10 , 11/* ">" */,-10 , 16/* "important" */,-10 , 14/* "line_terminal" */,-10 ),
-	/* State 38 */ new Array( 16/* "important" */,41 , 2/* "identifier" */,7 , 3/* "measurement" */,8 , 15/* "*" */,11 , 8/* "id_sign" */,12 , 7/* "," */,13 , 10/* "class_sign" */,14 , 9/* ":" */,15 , 11/* ">" */,16 , 14/* "line_terminal" */,-32 ),
-	/* State 39 */ new Array( 13/* ")" */,-16 , 7/* "," */,-16 ),
-	/* State 40 */ new Array( 14/* "line_terminal" */,42 ),
-	/* State 41 */ new Array( 14/* "line_terminal" */,-31 ),
-	/* State 42 */ new Array( 6/* "}" */,-30 , 2/* "identifier" */,-30 )
+	/* State 20 */ new Array( 2/* "identifier" */,30 , 3/* "measurement" */,31 , 4/* "string" */,32 , 8/* "id_sign" */,33 ),
+	/* State 21 */ new Array( 5/* "{" */,-23 , 2/* "identifier" */,-23 , 3/* "measurement" */,-23 , 15/* "*" */,-23 , 8/* "id_sign" */,-23 , 7/* "," */,-23 , 10/* "class_sign" */,-23 , 9/* ":" */,-23 , 11/* ">" */,-23 , 13/* ")" */,-23 , 16/* "important" */,-23 , 14/* "line_terminal" */,-23 ),
+	/* State 22 */ new Array( 5/* "{" */,-22 , 2/* "identifier" */,-22 , 3/* "measurement" */,-22 , 15/* "*" */,-22 , 8/* "id_sign" */,-22 , 7/* "," */,-22 , 10/* "class_sign" */,-22 , 9/* ":" */,-22 , 11/* ">" */,-22 , 13/* ")" */,-22 , 16/* "important" */,-22 , 14/* "line_terminal" */,-22 ),
+	/* State 23 */ new Array( 6/* "}" */,35 , 2/* "identifier" */,26 ),
+	/* State 24 */ new Array( 30/* "$" */,-6 , 2/* "identifier" */,-6 , 3/* "measurement" */,-6 , 15/* "*" */,-6 , 8/* "id_sign" */,-6 , 7/* "," */,-6 , 10/* "class_sign" */,-6 , 9/* ":" */,-6 , 11/* ">" */,-6 ),
+	/* State 25 */ new Array( 6/* "}" */,-30 , 2/* "identifier" */,-30 ),
+	/* State 26 */ new Array( 9/* ":" */,36 ),
+	/* State 27 */ new Array( 7/* "," */,37 , 13/* ")" */,38 ),
+	/* State 28 */ new Array( 13/* ")" */,-17 , 7/* "," */,-17 ),
+	/* State 29 */ new Array( 13/* ")" */,-18 , 7/* "," */,-18 ),
+	/* State 30 */ new Array( 13/* ")" */,-19 , 7/* "," */,-19 ),
+	/* State 31 */ new Array( 13/* ")" */,-20 , 7/* "," */,-20 ),
+	/* State 32 */ new Array( 13/* ")" */,-21 , 7/* "," */,-21 ),
+	/* State 33 */ new Array( 3/* "measurement" */,21 , 2/* "identifier" */,22 ),
+	/* State 34 */ new Array( 6/* "}" */,-29 , 2/* "identifier" */,-29 ),
+	/* State 35 */ new Array( 30/* "$" */,-5 , 2/* "identifier" */,-5 , 3/* "measurement" */,-5 , 15/* "*" */,-5 , 8/* "id_sign" */,-5 , 7/* "," */,-5 , 10/* "class_sign" */,-5 , 9/* ":" */,-5 , 11/* ">" */,-5 ),
+	/* State 36 */ new Array( 2/* "identifier" */,7 , 3/* "measurement" */,8 , 15/* "*" */,11 , 8/* "id_sign" */,12 , 7/* "," */,13 , 10/* "class_sign" */,14 , 9/* ":" */,15 , 11/* ">" */,16 ),
+	/* State 37 */ new Array( 2/* "identifier" */,30 , 3/* "measurement" */,31 , 4/* "string" */,32 , 8/* "id_sign" */,33 ),
+	/* State 38 */ new Array( 5/* "{" */,-10 , 2/* "identifier" */,-10 , 3/* "measurement" */,-10 , 15/* "*" */,-10 , 8/* "id_sign" */,-10 , 7/* "," */,-10 , 10/* "class_sign" */,-10 , 9/* ":" */,-10 , 11/* ">" */,-10 , 16/* "important" */,-10 , 14/* "line_terminal" */,-10 ),
+	/* State 39 */ new Array( 16/* "important" */,42 , 2/* "identifier" */,7 , 3/* "measurement" */,8 , 15/* "*" */,11 , 8/* "id_sign" */,12 , 7/* "," */,13 , 10/* "class_sign" */,14 , 9/* ":" */,15 , 11/* ">" */,16 , 14/* "line_terminal" */,-33 ),
+	/* State 40 */ new Array( 13/* ")" */,-16 , 7/* "," */,-16 ),
+	/* State 41 */ new Array( 14/* "line_terminal" */,43 ),
+	/* State 42 */ new Array( 14/* "line_terminal" */,-32 ),
+	/* State 43 */ new Array( 6/* "}" */,-31 , 2/* "identifier" */,-31 )
 );
 
 /* Goto-Table */
@@ -1695,12 +1696,12 @@ var goto_tab = new Array(
 	/* State 15 */ new Array(  ),
 	/* State 16 */ new Array(  ),
 	/* State 17 */ new Array(  ),
-	/* State 18 */ new Array( 21/* properties_list */,22 , 28/* property */,24 ),
+	/* State 18 */ new Array( 21/* properties_list */,23 , 28/* property */,25 ),
 	/* State 19 */ new Array(  ),
-	/* State 20 */ new Array( 24/* params_list */,26 , 27/* param */,27 , 25/* color */,28 ),
+	/* State 20 */ new Array( 24/* params_list */,27 , 27/* param */,28 , 25/* color */,29 ),
 	/* State 21 */ new Array(  ),
-	/* State 22 */ new Array( 28/* property */,33 ),
-	/* State 23 */ new Array(  ),
+	/* State 22 */ new Array(  ),
+	/* State 23 */ new Array( 28/* property */,34 ),
 	/* State 24 */ new Array(  ),
 	/* State 25 */ new Array(  ),
 	/* State 26 */ new Array(  ),
@@ -1712,14 +1713,15 @@ var goto_tab = new Array(
 	/* State 32 */ new Array(  ),
 	/* State 33 */ new Array(  ),
 	/* State 34 */ new Array(  ),
-	/* State 35 */ new Array( 22/* identifier_list */,38 , 23/* identifier_part */,6 , 25/* color */,9 , 26/* separator */,10 ),
-	/* State 36 */ new Array( 27/* param */,39 , 25/* color */,28 ),
-	/* State 37 */ new Array(  ),
-	/* State 38 */ new Array( 23/* identifier_part */,19 , 29/* important_sign */,40 , 25/* color */,9 , 26/* separator */,10 ),
-	/* State 39 */ new Array(  ),
+	/* State 35 */ new Array(  ),
+	/* State 36 */ new Array( 22/* identifier_list */,39 , 23/* identifier_part */,6 , 25/* color */,9 , 26/* separator */,10 ),
+	/* State 37 */ new Array( 27/* param */,40 , 25/* color */,29 ),
+	/* State 38 */ new Array(  ),
+	/* State 39 */ new Array( 23/* identifier_part */,19 , 29/* important_sign */,41 , 25/* color */,9 , 26/* separator */,10 ),
 	/* State 40 */ new Array(  ),
 	/* State 41 */ new Array(  ),
-	/* State 42 */ new Array(  )
+	/* State 42 */ new Array(  ),
+	/* State 43 */ new Array(  )
 );
 
 
@@ -1777,7 +1779,7 @@ var labels = new Array(
 
 	while( true )
 	{
-		act = 44;
+		act = 45;
 		for( var i = 0; i < act_tab[sstack[sstack.length-1]].length; i+=2 )
 		{
 			if( act_tab[sstack[sstack.length-1]][i] == la )
@@ -1800,7 +1802,7 @@ var labels = new Array(
 		
 			
 		//Panic-mode: Try recovery when parse-error occurs!
-		if( act == 44 )
+		if( act == 45 )
 		{
 			if( _dbg_withtrace )
 				__dbg_print( "Error detected: There is no reduce or shift on the symbol " + labels[la] );
@@ -1820,7 +1822,7 @@ var labels = new Array(
 				rvstack[i] = vstack[i];
 			}
 			
-			while( act == 44 && la != 30 )
+			while( act == 45 && la != 30 )
 			{
 				if( _dbg_withtrace )
 					__dbg_print( "\tError recovery\n" +
@@ -1829,7 +1831,7 @@ var labels = new Array(
 				if( la == -1 )
 					info.offset++;
 					
-				while( act == 44 && sstack.length > 0 )
+				while( act == 45 && sstack.length > 0 )
 				{
 					sstack.pop();
 					vstack.pop();
@@ -1837,7 +1839,7 @@ var labels = new Array(
 					if( sstack.length == 0 )
 						break;
 						
-					act = 44;
+					act = 45;
 					for( var i = 0; i < act_tab[sstack[sstack.length-1]].length; i+=2 )
 					{
 						if( act_tab[sstack[sstack.length-1]][i] == la )
@@ -1848,7 +1850,7 @@ var labels = new Array(
 					}
 				}
 				
-				if( act != 44 )
+				if( act != 45 )
 					break;
 				
 				for( var i = 0; i < rsstack.length; i++ )
@@ -1860,7 +1862,7 @@ var labels = new Array(
 				la = __lex( info );
 			}
 			
-			if( act == 44 )
+			if( act == 45 )
 			{
 				if( _dbg_withtrace )
 					__dbg_print( "\tError recovery failed, terminating parse process..." );
@@ -1873,7 +1875,7 @@ var labels = new Array(
 		}
 		
 		/*
-		if( act == 44 )
+		if( act == 45 )
 			break;
 		*/
 		
@@ -2021,12 +2023,12 @@ switch( act )
 	break;
 	case 22:
 	{
-		 rval = '#'+vstack[ vstack.length - 1 ] 
+		 rval = '#'+vstack[ vstack.length - 1 ]; 
 	}
 	break;
 	case 23:
 	{
-		rval = vstack[ vstack.length - 1 ];
+		 rval = '#'+vstack[ vstack.length - 1 ].render(); 
 	}
 	break;
 	case 24:
@@ -2051,25 +2053,30 @@ switch( act )
 	break;
 	case 28:
 	{
-		 rval = vstack[ vstack.length - 2 ];vstack[ vstack.length - 2 ].push(vstack[ vstack.length - 1 ]); 
+		rval = vstack[ vstack.length - 1 ];
 	}
 	break;
 	case 29:
 	{
-		 rval = [vstack[ vstack.length - 1 ]] 
+		 rval = vstack[ vstack.length - 2 ];vstack[ vstack.length - 2 ].push(vstack[ vstack.length - 1 ]); 
 	}
 	break;
 	case 30:
 	{
-		 rval = new sema.tree.property(vstack[ vstack.length - 5 ],vstack[ vstack.length - 3 ],vstack[ vstack.length - 2 ]); 
+		 rval = [vstack[ vstack.length - 1 ]]; 
 	}
 	break;
 	case 31:
 	{
-		 rval = true; 
+		 rval = new sema.tree.property(vstack[ vstack.length - 5 ],vstack[ vstack.length - 3 ],vstack[ vstack.length - 2 ]); 
 	}
 	break;
 	case 32:
+	{
+		 rval = true; 
+	}
+	break;
+	case 33:
 	{
 		 rval = false; 
 	}
