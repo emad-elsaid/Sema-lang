@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>لغة البرمجة سمة لتنسيق الصفحات</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+		<script type="text/javascript" src="sema-0.1.js"></script>
+		<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+		<style>
+			body{margin-top:20px;}
+			.clear{clear:both;}
+			.logo{float:right;margin:10px;}
+			#input,#output{
+				width: 98%;
+				height: 300px;
+			}
+			#output{direction:ltr;}
+			.try th{text-align: center;}
+			.center{text-align:center !important;}
+			.well{direction:ltr;}
+		</style>
+		<script type="text/javascript">
+		function compile(){
+			
+			var input = $('#input');
+			var output = $('#output');
+			
+			var input_text = input.val();
+			var output_text = sema.parse(input_text);
+			
+			if(output_text.error_count>0){
+				output.val(output.text.errors);
+			}else{
+				output.val(output_text.result.render());
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<ul class="nav pull-right">
+						<li><a href="#">التطوير</a></li>
+						<li><a href="#">تحميل</a></li>
+						<li><a href="#">تجربة</a></li>
+						<li><a href="#">مثال</a></li>
+						<li><a href="#">عن سمة</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<img src="style/header.png"/><br/><br/>
+		<div class="container" style="direction:rtl;">
+			<div class="page-header"><h1>عن سمة</h1></div>
+			<img src="style/logo.png" class="logo"/>
+			سمة هى لغة برمجة عربية لتنسيق صفحات المواقع بديلة للغة CSS, تعتمد على تحويل نص اللغة إلى CSS و دمجه فى الصفحة, تكتب سمة بنفس الصيغة التى تكتب بها لغة CSS و لكن بإستبدال اسماء الخواص بأسمائها العربية و سوف يقوم مترجم سمة بترجمتها, لتتحول من لغة CSS إلى لغة سمة ليس عليك سوى معرفة ترجمة الكلمات المستخدمة فى CSS لبدائلها العربية و يمكنك الإنطلاق بعدها لتستخدم اللغة فى جميع تصميماتك, لا تحتاج اللغة إلآ إلى تضمين المترجم الخاص بها فى رأس الصفحة.
+			
+			<div class="clear"></div>
+			<div class="page-header"><h1>مثال للغة سمة</h1></div>
+			<pre class="well">
+div{
+	الحدود : 1 بيكسل #886677 منقط؛
+	الخلفية : عنوان("image.png") بدون-تكرار اعلى منتصف;
+	الهوامش : 1انش 3.5انش 4بيكسل؛
+}
+			</pre>
+			سوف يتم ترجمتها إلى :
+			<pre class="well">
+div{
+	border: 1px #886677 dotted;
+	background: url("image.png") no-repeat top center;
+	margin: 1in 3.5in 4px;
+}
+			</pre>
+						لاحظ ان الصيغة كما هى بالضبط و لكن تم ترجمة جميع النصوص, و لاحظ أيضآ ان نهاية السطر يمكن ان تكون فاصلة منقوطة بدلأ من semi-colon
+			<div class="clear"></div>
+			<div class="page-header"><h1>تجربة</h1></div>
+			<table class="table table-bordered table-striped try">
+				<thead>
+					<tr>
+						<th>نص لغة سمة</th>
+						<th>الناتج بلغة CSS</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><textarea id="input">div{
+	الحدود : 1 بيكسل #886677 منقط؛
+	الخلفية : عنوان("image.png") بدون-تكرار اعلى منتصف;
+	الهوامش : 1انش 3.5انش 4بيكسل؛
+}</textarea></td>
+						<td><textarea id="output" readonly="readonly"></textarea></td>
+					</tr>
+					<tr>
+						<td colspan="2" class="center"><button class="btn btn-primary" onclick="compile();">ترجم</button></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="page-header"><h1>تحميل</h1></div>
+			يمكنك استخدام سمة لأى غرض تعليمى كان او تجارى, تطوير اللغة يجب ان يخضع لرخصة <a href="http://www.gnu.org/licenses/gpl-3.0.ar.html">جنو العامة GPL النسخة الثالثة</a>, لكى تبدأ استخدام سمة يمكنك تنزيلها من هنا
+			<ol>
+				<li>قم بكتابة نص سمة فى ملفان بإمتداد .sema</li>
+				<li>قم بإدراج ملف سمة فى رأس صفحة HTML كالتالى <br/>
+					<div class="well">
+						&lt;link rel="stylesheet/sema" type="text/css" href="styles.sema"&gt;
+					</div>
+				</li>
+				<li>
+				ثم قم بإدراج مترجم سمة بعد جميع ملفات سمة ليقوم بترجمتها بطريقة آلية
+				<div class="well">
+				&lt;script src="sema.js" type="text/javascript"&gt;&lt;/script&gt;
+				</div>
+				</li>
+			</ol>
+			<div class="page-header"><h1>التطوير</h1></div>
+			يقوم بتطوير سمة <a href="http://www.blazeboy.me">عماد السعيد</a> على تويتر @blaz_boy , للمساعدة فى تطوير اللغة يمكنك عمل شوكة منها على موقع Github <a href="#">من هنا</a>
+			
+			<br/><br/><br/><br/>
+		</div>
+	</body>
+</html>

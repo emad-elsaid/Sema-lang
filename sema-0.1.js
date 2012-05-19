@@ -9,70 +9,215 @@
  *  Date: 04.08.2011
  */
 (function(global,undefined){"use strict";var __features={STRING_INDEX_ENUMERABLE:"abc".propertyIsEnumerable("1"),ACCESSORS:Object.prototype.__defineGetter__&&Object.prototype.__defineSetter__,DOM:typeof window==='object'&&typeof document==='object'};var __propertyIsEnumerable=function(obj,property){if(obj.propertyIsEnumerable){return obj.propertyIsEnumerable(property)}for(var key in obj){if(key===property&&(obj.hasOwnProperty?obj.hasOwnProperty(property):true)){return true}}return false};Function.prototype.bind||(Function.prototype.bind=function(ctx){if(typeof this!=='function')throw new TypeError("'this' is not a function");var fn=this,args=$AP.slice.call(arguments,1);return function(){return fn.apply(ctx,args.concat(Array.prototype.slice.call(arguments)))}});String.prototype.trim||(String.prototype.trim=function(){return this.replace(/^\s\s*/,'').replace(/\s\s*$/,'')});Array.isArray||(Array.isArray=function(obj){return Object.prototype.toString.call(obj)==="[object Array]"||(obj instanceof Array)});var $AP=Array.prototype;$AP.indexOf||($AP.indexOf=function(searchElement){var len=this.length,i=+arguments[1]||0;if(len===0||isNaN(i)||i>=len)return-1;if(i<0){i=len+i;i<0&&(i=0)}for(;i<len;++i){if(this.hasOwnProperty(String(i))&&this[i]===searchElement)return i}return-1});$AP.lastIndexOf||($AP.lastIndexOf=function(searchElement){var len=this.length,i=+arguments[1]||len-1;if(len===0||isNaN(i))return-1;if(i<0){i=len+i}else if(i>=len){i=len-1}for(;i>=0;--i){if(this.hasOwnProperty(String(i))&&this[i]===searchElement)return i}return-1});$AP.every||($AP.every=function(callback){if(!__isCallable(callback))throw new TypeError(callback+" is not a callable object");var thisArg=arguments[1];for(var i=0,len=this.length;i<len;++i){if(this.hasOwnProperty(String(i))){if(!callback.call(thisArg,this[i],i,this))return false}}return true});$AP.some||($AP.some=function(callback){if(!__isCallable(callback))throw new TypeError(callback+" is not a callable object");var thisArg=arguments[1];for(var i=0,len=this.length;i<len;++i){if(this.hasOwnProperty(String(i))){if(callback.call(thisArg,this[i],i,this))return true}}return false});$AP.forEach||($AP.forEach=function(callback){if(!__isCallable(callback))throw new TypeError(callback+" is not a callable object");var thisArg=arguments[1];for(var i=0,len=this.length;i<len;++i){if(this.hasOwnProperty(String(i))){callback.call(thisArg,this[i],i,this)}}});$AP.map||($AP.map=function(callback){if(!__isCallable(callback))throw new TypeError(callback+" is not a callable object");var thisArg=arguments[1],len=this.length,results=new Array(len);for(var i=0;i<len;++i){if(this.hasOwnProperty(String(i))){results[i]=callback.call(thisArg,this[i],i,this)}}return results});$AP.filter||($AP.filter=function(callback){if(!__isCallable(callback))throw new TypeError(callback+" is not a callable object");var thisArg=arguments[1],len=this.length,results=[];for(var i=0;i<len;++i){if(this.hasOwnProperty(String(i))){callback.call(thisArg,this[i],i,this)&&results.push(this[i])}}return results});$AP.reduce||($AP.reduce=function(callback){if(!__isCallable(callback))throw new TypeError(callback+" is not a callable object");var len=this.length;if(len===0&&arguments.length<2)throw new TypeError("reduce of empty array with no initial value");var initIdx=-1;if(arguments.length<2){if((initIdx=__firstIndex(this))===-1)throw new TypeError("reduce of empty array with no initial value");}var val=arguments.length>1?arguments[1]:this[initIdx];for(var i=initIdx+1;i<len;++i){if(this.hasOwnProperty(String(i))){val=callback(val,this[i],i,this)}}return val});$AP.reduceRight||($AP.reduceRight=function(callback){if(!__isCallable(callback))throw new TypeError(callback+" is not a callable object");var len=this.length;if(len===0&&arguments.length<2)throw new TypeError("reduce of empty array with no initial value");var initIdx=len;if(arguments.length<2){for(var k=len-1;k>=0;--k){if(this.hasOwnProperty(String(k))){initIdx=k;break}}if(initIdx===len)throw new TypeError("reduce of empty array with no initial value");}var val=arguments.length>1?arguments[1]:this[initIdx];for(var i=initIdx-1;i>=0;--i){if(this.hasOwnProperty(String(i))){val=callback(val,this[i],i,this)}}return val});Date.now||(Date.now=function(){return+new Date});Date.prototype.toISOString||(Date.prototype.toISOString=(function(){var str=function(n,l){var str=String(n),len=l||2;while(str.length<len)str='0'+str;return str};return function(){return isFinite(this.getTime())?String(this.getUTCFullYear()).concat('-',str(this.getUTCMonth()+1),"-",str(this.getUTCDate()),"T",str(this.getUTCHours()),":",str(this.getUTCMinutes()),":",str(this.getUTCSeconds()),".",str(this.getUTCMilliseconds(),3),"Z"):'Invalid Date'}})());Date.prototype.toJSON||(Date.prototype.toJSON=function(key){if(!isFinite(this))return null;if(!this.toISOString||typeof this.toISOString!=='function')throw new TypeError("Date.prototype.toJSON called on incompatible "+(typeof this));return this.toISOString()});if(!Object.getPrototypeOf){if("".__proto__){Object.getPrototypeOf=function(obj){if(!__isObject(obj))throw new TypeError(obj+" is not an object");return obj.__proto__}}else{Object.getPrototypeOf=function(obj){if(!__isObject(obj))throw new TypeError(obj+" is not an object");return obj.constructor?obj.constructor.prototype:null}}}Object.create||(Object.create=(function(){var __TmpConstructor=function(){};return function(proto,properties){if(!__isObject(proto))throw new TypeError(proto+" is not an object");__TmpConstructor.prototype=proto;var obj=new __TmpConstructor();properties&&Object.defineProperties(obj,properties);return obj}})());Object.isSealed||(Object.isSealed=function(obj){if(!__isObject(obj))throw new TypeError(obj+" is not an object");return false});Object.isFrozen||(Object.isFrozen=function(obj){if(!__isObject(obj))throw new TypeError(obj+" is not an object");return false});Object.isExtensible||(Object.isExtensible=function(obj){if(!__isObject(obj))throw new TypeError(obj+" is not an object");return true});Object.getOwnPropertyDescriptor||(Object.getOwnPropertyDescriptor=(function(){var __NUMBER_CONSTS=['MAX_VALUE','MIN_VALUE','NaN','POSITIVE_INFINITY','NEGATIVE_INFINITY'],__MATH_CONSTS=['PI','E','LN2','LOG2E','LOG10E','SQRT1_2','SQRT2'];return function(obj,pname){if(!__isObject(obj))throw new TypeError(obj+" is not an object");if(!(pname in obj))return;var editable=true,configurable=true;if((obj===Number&&__NUMBER_CONSTS.indexOf(pname)>=0)||(obj===Math&&__MATH_CONSTS.indexOf(pname)>=0)||(pname=='length'&&(obj===String.prototype||__isString(obj)||obj===Function.prototype||obj instanceof Function))){editable=false;configurable=false}else if(pname=='length'&&(obj===Array.prototype||Array.isArray(obj))){configurable=false}return{writable:editable,enumerable:__propertyIsEnumerable(obj,pname),configurable:configurable,value:obj[pname]}}})());(!Object.defineProperty||!Object.defineProperties)&&(function(){var __applyDefaults=function(desc,defaultValue,value){if(desc.hasOwnProperty("get")||desc.hasOwnProperty("set")){throw new TypeError("Getters and setters are not supported by this ECMAScript engine");}else{desc.writable=desc.hasOwnProperty('writable')?desc.writable:defaultValue;desc.value=desc.hasOwnProperty('value')?desc.value:value}desc.enumerable=desc.hasOwnProperty('enumerable')?desc.enumerable:defaultValue;desc.configurable=desc.hasOwnProperty('configurable')?desc.configurable:defaultValue;var t=null;if((!desc[t="configurable"])||(!desc[t="enumerable"])||(!desc[t="writable"])){throw new TypeError("Property '".concat(t,"' cannot be set to false in this version of ECMAScript engine"));}return desc};if(!Object.defineProperty){Object.defineProperty=function(obj,property,descriptor){if(!__isObject(obj))throw new TypeError(obj+" is not an object");var pname=String(property);var desc=__toPropertyDescriptor(descriptor);desc=__applyDefaults(desc,obj.hasOwnProperty(pname),obj[pname]);obj[pname]=desc.value;return obj};Object.defineProperty.DDRECMA5=true}if(!Object.defineProperties){Object.defineProperties=function(obj,properties){if(!__isObject(obj))throw new TypeError(obj+" is not an object");var properties=Object(properties);var descriptors={};for(var key in properties){if(properties.hasOwnProperty(key)){var desc=__toPropertyDescriptor(properties[key]);descriptors[key]=__applyDefaults(desc,obj.hasOwnProperty(key),obj[key])}}for(key in descriptors){if(properties.hasOwnProperty(key)){obj[key]=descriptors[key].value}}return obj};Object.defineProperties.DDRECMA5=true}})();Object.keys||(Object.keys=function(obj){if(!__isObject(obj))throw new TypeError(obj+" is not an object");var results=[];for(var key in obj){(obj.hasOwnProperty?obj.hasOwnProperty(key):key in obj)&&results.push(key)}if(__isString(obj)&&!__features.STRING_INDEX_ENUMERABLE){for(var i=0,len=obj.length;i<len;++i){results.push(String(i))}}return results});!Object.getOwnPropertyNames&&(function(){var __notEnumerableProperties=(function(){var props=[{object:Object,keys:['getOwnPropertyNames','seal','create','isFrozen','keys','isExtensible','getOwnPropertyDescriptor','preventExtensions','getPrototypeOf','defineProperty','isSealed','defineProperties','freeze']},{object:Object.prototype,keys:['toString','__lookupGetter__','__defineGetter__','toLocaleString','hasOwnProperty','valueOf','__defineSetter__','propertyIsEnumerable','isPrototypeOf','__lookupSetter__']},{object:Function.prototype,keys:['bind','arguments','toString','length','call','name','apply','caller']},{object:Number,keys:['NaN','NEGATIVE_INFINITY','POSITIVE_INFINITY','MAX_VALUE','MIN_VALUE']},{object:Number.prototype,keys:['toExponential','toString','toLocaleString','toPrecision','valueOf','toFixed']},{object:String,keys:['fromCharCode']},{object:String.prototype,keys:['length','concat','localeCompare','substring','italics','charCodeAt','strike','indexOf','toLowerCase','trimRight','toString','toLocaleLowerCase','replace','toUpperCase','fontsize','trim','split','substr','sub','charAt','blink','lastIndexOf','sup','fontcolor','valueOf','link','bold','anchor','trimLeft','small','search','fixed','big','match','toLocaleUpperCase','slice']},{object:Boolean.prototype,keys:['toString','valueOf']},{object:Date,keys:['now','UTC','parse']},{object:Date.prototype,keys:['toUTCString','setMinutes','setUTCMonth','getMilliseconds','getTime','getMinutes','getUTCHours','toString','setUTCFullYear','setMonth','getUTCMinutes','getUTCDate','setSeconds','toLocaleDateString','getMonth','toTimeString','toLocaleTimeString','setUTCMilliseconds','setYear','getUTCFullYear','getFullYear','getTimezoneOffset','setDate','getUTCMonth','getHours','toLocaleString','toISOString','toDateString','getUTCSeconds','valueOf','setUTCMinutes','getUTCDay','toJSON','setUTCDate','setUTCSeconds','getYear','getUTCMilliseconds','getDay','setFullYear','setMilliseconds','setTime','setHours','getSeconds','toGMTString','getDate','setUTCHours']},{object:RegExp,keys:['$*','$`','$input','$+','$&',"$'",'$_']},{object:RegExp.prototype,keys:['toString','exec','compile','test']},{object:Error.prototype,keys:['toString']},{object:Math,keys:['LN10','PI','E','LOG10E','SQRT2','LOG2E','SQRT1_2','LN2','cos','pow','log','tan','sqrt','ceil','asin','abs','max','exp','atan2','random','round','floor','acos','atan','min','sin']},{object:global,keys:['TypeError','decodeURI','parseFloat','Number','URIError','encodeURIComponent','RangeError','ReferenceError','RegExp','Array','isNaN','Date','Infinity','Boolean','Error','NaN','String','Function','Math','undefined','encodeURI','escape','unescape','decodeURIComponent','EvalError','SyntaxError','Object','eval','parseInt','JSON','isFinite']},{test:function(obj){return typeof JSON!=='undefined'&&obj===JSON},keys:['stringify','parse']},{test:function(obj){return Array.isArray(obj)||__isString(obj)},keys:['length']},{test:function(obj){return obj instanceof RegExp},testValue:new RegExp('.+'),keys:['lastIndex','multiline','global','source','ignoreCase']},{test:function(obj){return typeof obj==='function'&&obj.apply&&obj.call},testValue:function(a,b,c){},keys:['arguments','length','name','prototype','caller']}];for(var i=0,ilen=props.length;i<ilen;++i){if(props[i].object){if(typeof props[i].object==='function'){props[i].keys.push('arguments','length','name','prototype','caller')}else if(typeof props[i].object==='object'&&props[i].object!==Math&&props[i].object!==global){props[i].keys.push('constructor')}for(var j=props[i].keys.length-1;j>=0;--j){if(!(props[i].keys[j]in props[i].object)||__propertyIsEnumerable(props[i].object,props[i].keys[j])){props[i].keys.splice(j,1)}}}else if(props[i].test&&props[i].testValue&&props[i].test(props[i].testValue)){for(var j=props[i].keys.length-1;j>=0;--j){if(!(props[i].keys[j]in props[i].testValue)||__propertyIsEnumerable(props[i].testValue,props[i].keys[j])){props[i].keys.splice(j,1)}}delete props[i].testValue}}return props})();var __len=__notEnumerableProperties.length;Object.getOwnPropertyNames=function(obj){var keys=Object.keys(obj);for(var i=0;i<__len;++i){if((__notEnumerableProperties[i].object&&__notEnumerableProperties[i].object===obj)||(__notEnumerableProperties[i].test&&__notEnumerableProperties[i].test(obj))){keys=keys.concat(__notEnumerableProperties[i].keys);break}}return keys}})();var __isObject=function(obj){return obj&&(typeof obj==='object'||typeof obj==='function')};var __isString=function(obj){return typeof obj==='string'||Object.prototype.toString.call(obj)==='[object String]'};var __firstIndex=function(arr){for(var k=0,len=arr.length;k<len;++k){if(arr.hasOwnProperty(String(k))){return k}}return-1};var __toPropertyDescriptor=function(obj){if(!obj||typeof obj!=='object')throw new TypeError(obj+" is not an object");var desc={};obj.hasOwnProperty("enumerable")&&(desc.enumerable=!!obj.enumerable);obj.hasOwnProperty("configurable")&&(desc.configurable=!!obj.configurable);obj.hasOwnProperty("writable")&&(desc.writable=!!obj.writable);obj.hasOwnProperty("value")&&(desc.value=obj.value);if(obj.hasOwnProperty("get")){if(!__isCallable(obj.get)&&typeof obj.get!=='undefined')throw new TypeError("Getter must be a callable object");desc.get=obj.get}if(obj.hasOwnProperty("set")){if(!__isCallable(obj.set)&&typeof obj.set!=='undefined')throw new TypeError("Setter must be a callable object");desc.set=obj.set}if((desc.hasOwnProperty("get")||desc.hasOwnProperty("set"))&&(desc.hasOwnProperty("writable")||desc.hasOwnProperty("value"))){throw new TypeError("Invalid property. A property cannot both have accessors and be writable or have a value");}return desc};var __isCallable=(function(){var __sortCase=(function(){try{[].sort('abc');return false}catch(ex){return true}})();return function(obj){if(typeof obj==='function')return true;if(typeof obj!=='object')return false;if(obj instanceof Function||obj instanceof RegExp)return true;if(__sortCase){try{[].sort(obj);return true}catch(ex){}}return false}})()})(this);/*
- * author : Emad Elsaid <blazeeboy@gmail.com>
- * version : 0.1
+ * 		version : 0.1
+ *      header.js
+ *      
+ *      Copyright 2012 Blaze Boy <blazeeboy@gmail.com>
+ *      
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *      
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *      
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ *      
+ *      @Description : this is main sema file, it will include the library
+ * 		heirarchy, initial objects to be filled with backages like tree 
+ * 		classes and sema utilities.
+ * 		@Package : Sema
+ */
+ 
+/**
+ * main sema object all sema objects,classes will be in that namespace
+ * so as not to populate javascript global namespace with object and
+ * prevent conflict with user code
  */
 var sema = new Object();
+
+/**
+ * utilities object, it will hold objects sema need to translate,evaluate
+ * the text, we'll consider the utilities as a base layer sema will be
+ * built over it, contains all we need to make the main parser,lexical 
+ * analyzer and compile,
+ * objects in this layer can depent on each other or natie javascript
+ * API, they cannot use anyhing from the higher layer (tree, parser..etc)
+ */
 sema.utils = {};
+
+/**
+ * sema tree is the main sema component, as the lexical analyzer will 
+ * convert sema text into tokens and convert each tocken into the
+ * apropriate tree object, each tree object has a render method that
+ * will return the CSS alternative of the object, so the tree will call
+ * this render recursively down to leaves and form the CSS alternative 
+ * of this tree then return it to be injected.
+ */
 sema.tree = {};
+/*
+ *      loader.js
+ *      
+ *      Copyright 2012 Blaze Boy <blazeeboy@gmail.com>
+ *      
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *      
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *      
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ *      
+ *      @Description : loader is an object loads files with ajax, inject
+ * 		compiled CSS into page head
+ * 		@Package : Sema utilities
+ */
+
 sema.utils.loader = {
 		
+	/**
+	 * get linked sema fiels to current document
+	 * links of sema should be added before library script tag
+	 * <link rel="stylesheet/sema" type="text/css" href="style.sema">
+	 * @return <Array> : array of sema fiels URLs
+	 */
 	getSemaFiles : function(){
+		
+		// prepare an array to hold URls
 		var files = [];
-		for( var i=0; i<document.getElementsByTagName("link").length; i++){
-			if( document.getElementsByTagName("link")[i].rel=='stylesheet/sema'){
-				files.push(document.getElementsByTagName("link")[i].href);
+		
+		// get all link tags in the document
+		var links = document.getElementsByTagName("link");
+		
+		/*
+		 * for each link tag in  the document if "rel" is sema then add
+		 * href to the files array, note that i didn't use the forEach
+		 * as links is not an array it is a nodeList or DomList, 
+		 * i don't remember exactly, the point is it not an Array so
+		 * son't deal with it as an Array.
+		 */
+		for( var i=0; i<links.length; i++){
+			if( links[i].rel=='stylesheet/sema'){
+				files.push(links[i].href);
 			}
 		};
+		
 		return files;
 	},
 	
+	/**
+	 * loads a file using synchronously request and return its content
+	 * @return <String> : file content
+	 */
 	load: function(url){
 		
-	   var page_request = false
-
-	   if (window.XMLHttpRequest) // if Mozilla, Safari etc
-		  page_request = new XMLHttpRequest()
-	   else if (window.ActiveXObject) // if IE
-	   { 
-
-		 try {
-		   page_request = new ActiveXObject("Msxml2.XMLHTTP")
-		 } 
-		 catch (e){
-		   try{
-			 page_request = new ActiveXObject("Microsoft.XMLHTTP")
-		   }
-		   catch (e){}
-		 }
-	   }
-	   else
-		 return false
-
-	   page_request.open('GET', url, false) //get page synchronously 
-	   page_request.send(null)
-	   return page_request.responseText;
+		/*
+		 * this snippet of code i got it from the internet
+		 */ 
+		var page_request = false;
+	
+		// create the appropriate ajax object
+		if (window.XMLHttpRequest) // if Mozilla, Safari etc
+			page_request = new XMLHttpRequest();
+		else if (window.ActiveXObject) // if IE
+		{ 
+			try {
+				page_request = new ActiveXObject("Msxml2.XMLHTTP");
+			} 
+			catch (e){
+				try{
+					page_request = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				catch (e){}
+			}
+		}
+		else
+		return false;
+		
+		page_request.open('GET', url, false); //get page synchronously 
+		page_request.send(null);
+		return page_request.responseText;
 	},
 	
+	/**
+	 * load all linked sema files and pass them to
+	 * the injection function to compile and inject
+	 */
 	loadSemaFiles : function(){
 		var me = this;
+		
+		// get sema files and for each compile and inject
 		this.getSemaFiles().forEach(function(url){
+			// load the file then inject it to head
 			me.inject(me.load(url));
 		});
 		
 	},
 	
+	/**
+	 * takes sema text and compile it then add it to head tag
+	 * as CSS style tag
+	 * @param semaText <String> : sema string
+	 */
 	inject : function(semaText){
+		
+		// parse semaText into a tree
 		var parser = sema.parse(semaText);
+		
+		// log the parsing results to console
 		sema.utils.logger.log(parser);
+		
+		// compile the tree into CSS
 		var css = parser.result.render();
+		
+		// create a style tag
 		var style = document.createElement('style');
+		
+		// the add the css to the style and add it to the document head
 		style.appendChild(document.createTextNode(css));
 		document.head.appendChild(style);
 	}
 };
+/*
+ *      logger.js
+ *      
+ *      Copyright 2012 Blaze Boy <blazeeboy@gmail.com>
+ *      
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *      
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *      
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ *      
+ *      @Description : logger log errors and information to browser console
+ * 		@Package : Sema utilities
+ */
+
 sema.utils.logger = {
 	
+	// log the input parameter to console if there is any console
 	log: function(input){
 		if(console){
 			console.log(input);
@@ -80,8 +225,38 @@ sema.utils.logger = {
 	}
 
 };
+/*
+ *      translator.js
+ *      
+ *      Copyright 2012 Blaze Boy <blazeeboy@gmail.com>
+ *      
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *      
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *      
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ *      
+ *      @Description : tranlator in an object that contain tokens table
+ * 		and able to translate these tokens into their css alternative.
+ * 		@Package : Sema utilities
+ */
+
 sema.utils.translator = {
 
+	/**
+	 * this table contain arabic token as key and english alternative
+	 * as value, you can use it to translate arabic into english and
+	 * vice versa.
+	 */
 	table:{
 		'نشط':'active',
 		'بعد':'after',
@@ -624,16 +799,50 @@ sema.utils.translator = {
 		'اصفر':'yellow',
 		'البعد-ع':'z-index',
 		'تقريب':'zoom',
+		'%':'%'
 	},
 
+	/**
+	 * translate an identifier from arabic into english
+	 * it will return the identifier untranslated as it is
+	 * if not found in the table
+	 */
 	translate: function(identifier){
-		return this.table[identifier]!=undefined
-					? this.table[identifier]
-					: identifier;
+		
+		if(this.table[identifier]!=undefined){
+			return this.table[identifier];
+		}else{
+			// log a message to console of we couldn't find the identifier
+			console.log( "couldn't find the token :"+identifier );
+			return identifier;
+		}
 	}
 	
 };
 
+/*
+ *      block.js
+ *      
+ *      Copyright 2012 Blaze Boy <blazeeboy@gmail.com>
+ *      
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *      
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *      
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ *      
+ *      @Description : sema block class, it represent sema block like CSS block
+ * 		@Package : Sema Tree
+ */
 sema.tree.block = function(selector,properties){
 
 	this.selector = Array.isArray(selector)? selector : [];
@@ -643,23 +852,33 @@ sema.tree.block = function(selector,properties){
 		
 		var me = this;
 		
-		// if block has no properties then don't produce any HTML
+		// if block has no properties then don't produce any CSS
 		if(this.properties.length==0)
 			return '';
 			
 		// get selector string
 		var selector = this.selector
 							.map(function(item,index){
+								
+								/* if there is two selectors backtoback
+								 * we have to add a space btween them
+								 */
 								var prefix = index>0
 											&&(!item.isSeparator())
 											&&(!me.selector[index-1].isSeparator())
 											? ' '
 											: '';
+								
+								/* now translate this selector if it is
+								 * a pseudo selector like 
+								 * active,hover...etc
+								 */
 								var translate = index>0
 											&&(!item.isSeparator())
 											&&me.selector[index-1].isPseudoPrefix()
 											? true
 											: false;
+											
 								return prefix + item.render(translate);
 							})
 							.join('');
@@ -673,46 +892,186 @@ sema.tree.block = function(selector,properties){
 		return selector + '{' + properties + '}';
 	}
 }
-sema.tree.file = function(blocks){
+/*
+ *      file.js
+ *      
+ *      Copyright 2012 Blaze Boy <blazeeboy@gmail.com>
+ *      
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *      
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *      
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ *      
+ *      @Description : file is a class represent a file content 
+ * 		parsed with the parser into sema tree of objects
+ * 		@Package : Sema Tree
+ */
 
+sema.tree.file = function(blocks){
+	
+	// blocks passed to the constructor, it is an array of blocks objects
 	this.blocks = Array.isArray(blocks) ? blocks : [];
 	
+	/**
+	 * add new block object to the file
+	 * @param block <sema.tree.block> : a block object
+	 */
 	this.addBlock = function(block){
 		this.blocks.push(block);
 	}
 	
+	/**
+	 * compile the file into css
+	 * @return <String>: CSS string of the file
+	 */
 	this.render = function(){
 		return this.blocks
 					.map(function(block){ return block.render(); })
 					.join('');		
 	}
 }
+/*
+ *      func.js
+ *      
+ *      Copyright 2012 Blaze Boy <blazeeboy@gmail.com>
+ *      
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *      
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *      
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ *      
+ *      @Description : function representation is represetn 
+ * 		function name and parameters like : rgb(),nth-child(3)...etc
+ * 		@Package : Sema Tree
+ */
+
 sema.tree.func = function(name,params){
 	
+	// function name
 	this.name = name;
+	
+	// function parameters
 	this.params = Array.isArray(params)? params : [];
 	
+	/**
+	 * generate function css alternative
+	 * @return <String> : css calue of the function
+	 */
 	this.render = function(){
 		return this.name+'('+this.params.join(',')+')';
 	}
 }
+/*
+ *      measurement.js
+ *      
+ *      Copyright 2012 Blaze Boy <blazeeboy@gmail.com>
+ *      
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *      
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *      
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ *      
+ *      @Description : represent a numberfollowed by measurement token
+ * 		@Package : Sema Tree
+ */
+
 sema.tree.measurement = function(value){
+	
+	// measurement token e.g 1px 20cm
 	this.value = value;
 	
+	/**
+	 * convert the measurement to css alternative
+	 * and translate the measurement usint into english
+	 */
 	this.render = function(){
+		
+		// get the measurement unit
 		var unit = this.value.match(/[^0-9\.\-]+$/)[0];
+		
+		// translate teh unit to the css alternative
 		var t_unit = sema.utils.translator.translate(unit);
+		
+		// replace the translated token with the older one
 		return this.value.replace(unit,t_unit);
 	}
 }
+/*
+ *      property.js
+ *      
+ *      Copyright 2012 Blaze Boy <blazeeboy@gmail.com>
+ *      
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *      
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *      
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ *      
+ *      @Description : represent a property line that contains 
+ * 		property name and values
+ * 		@Package : Sema Tree
+ */
+
 sema.tree.property = function(name,value,important){
 	
+	// name of the property
 	this.name = typeof name == "string" ? name : '';
+	
+	// vlues array of that property
 	this.value = Array.isArray(value) ? value : [];
+	
+	// if it is marked as important or not
 	this.important = important;
 	
+	/**
+	 * compile the property to CSS
+	 * @return <String> : CSS alternative of the object
+	 */
 	this.render = function(){
+		
+		// translate property name
 		var name = sema.utils.translator.translate(this.name);
+		
+		// foreach value translate or render depending on the type
 		var value = this.value
 						.map(function(item){ 
 							return typeof item=="string"
@@ -720,30 +1079,73 @@ sema.tree.property = function(name,value,important){
 									: item.render();  
 						})
 						.join(' ');
+		
+		// if it is important them create suffix
 		var important = this.important? ' !important':'';					
 		
 		return name+':'+value+important+';';
 	}
 }
+/*
+ *      selector.js
+ *      
+ *      Copyright 2012 Blaze Boy <blazeeboy@gmail.com>
+ *      
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *      
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *      
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ *      
+ *      @Description : class represents single selector token
+ * 		@Package : Sema Tree
+ */
+
 sema.tree.selector = function(identifier){
 	
+	// the selector value
 	this.identifier = typeof identifier == 'string' ? identifier : '';
 	
+	/**
+	 * return the identifier value
+	 */
 	this.getIdentifier = function(){
 		return this.identifier;
 	}
 	
+	/**
+	 * convert teh object into CSS alternative
+	 * @param translate <Boolean> : if it should be translated or not
+	 * @return <String> : the CSS alternative or this selector
+	 */
 	this.render = function(translate){
 		return translate==true
 				? sema.utils.translator.translate(this.identifier)
 				:this.identifier;
 	}
 	
+	/**
+	 * check if this the selector is separator
+	 * @return <Boolean> : true if it is a separator
+	 */
 	this.isSeparator = function(){
 		var identifier = this.identifier.trim();
 		return ['#','>','.',':',','].indexOf(identifier)>-1;
 	}
 	
+	/**
+	 * check if it is a pseudo selector prefix
+	 * @return <Boolean> : true if it is a pseudo selector prefix
+	 */
 	this.isPseudoPrefix = function(){
 		return this.identifier.trim()==':';
 	}
@@ -1747,4 +2149,30 @@ if( ( error_count = __parse( str,
 }
 
 
+/*
+ *      footer.js
+ *      
+ *      Copyright 2012 Blaze Boy <blazeeboy@gmail.com>
+ *      
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *      
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *      
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ *      
+ *      @Description : this code is added after all sema code,
+ * 		to do some automatic functions when file loaded.
+ * 		@Package : Sema
+ */
+ 
+// load semaFiles which are linked to document
 sema.utils.loader.loadSemaFiles();
