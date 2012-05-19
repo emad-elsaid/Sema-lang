@@ -30,7 +30,7 @@
 			var output_text = sema.parse(input_text);
 			
 			if(output_text.error_count>0){
-				output.val(output.text.errors);
+				output.val(output_text.errors);
 			}else{
 				output.val(output_text.result.render());
 			}
@@ -63,7 +63,7 @@
 div{
 	الحدود : 1 بيكسل #886677 منقط؛
 	الخلفية : عنوان("image.png") بدون-تكرار اعلى منتصف;
-	الهوامش : 1انش 3.5انش 4بيكسل؛
+	الهامش : 1انش 3.5انش 4بيكسل؛
 }
 			</pre>
 			سوف يتم ترجمتها إلى :
@@ -89,7 +89,7 @@ div{
 						<td><textarea id="input">div{
 	الحدود : 1 بيكسل #886677 منقط؛
 	الخلفية : عنوان("image.png") بدون-تكرار اعلى منتصف;
-	الهوامش : 1انش 3.5انش 4بيكسل؛
+	الهامش : 1انش 3.5انش 4بيكسل؛
 }</textarea></td>
 						<td><textarea id="output" readonly="readonly"></textarea></td>
 					</tr>
