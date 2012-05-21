@@ -30,7 +30,7 @@
 			var output_text = sema.parse(input_text);
 			
 			if(output_text.error_count>0){
-				output.val(output_text.errors);
+				output.val(output_text.result);
 			}else{
 				output.val(output_text.result.render());
 			}
@@ -90,7 +90,7 @@ div{
 				<tbody>
 					<tr>
 						<td><textarea id="input">div{
-	الحدود : 1 بيكسل #886677 منقط؛
+	الحدود : 1بيكسل #886677 منقط؛
 	الخلفية : عنوان("image.png") بدون-تكرار اعلى منتصف;
 	الهامش : 1انش 3.5انش 4بيكسل؛
 }</textarea></td>
@@ -103,8 +103,14 @@ div{
 			</table>
 			<div class="page-header" id="download"><h1>تحميل</h1></div>
 			يمكنك استخدام سمة لأى غرض تعليمى كان او تجارى, تطوير اللغة يجب ان يخضع لرخصة <a href="http://www.gnu.org/licenses/gpl-3.0.ar.html">جنو العامة GPL النسخة الثالثة</a>, لكى تبدأ استخدام سمة يمكنك تنزيلها من هنا <a href="https://raw.github.com/blazeeboy/Sema-lang/master/dist/sema-0.1.js" class="btn btn-success btn-large">تحميل سمة</a>
+			<br/><br/>
+			<div class="alert alert-error">
+			سمة لن تعمل إلا إذا كانت الصفحات مخدومة عن طريق سيرفر اباتشى لأنها تستخدم اجاكس لتحميل الملفات و لإعتبارات امنية تقوم المتصفحات بغلق الأجاكس فيما يسمى بـ
+			<a href="http://en.wikipedia.org/wiki/Same_origin_policy">The Same origin policy</a>
+			 اى ان اللغة ان تعمل إلا إذا كانت على بروتوكول HTTP او HTTPS 
+			</div>
 			<ol>
-				<li>قم بكتابة نص سمة فى ملفان بإمتداد .sema</li>
+				<li>قم بكتابة نص سمة فى ملف بإمتداد .sema</li>
 				<li>قم بإدراج ملف سمة فى رأس صفحة HTML كالتالى <br/>
 					<div class="well">
 						&lt;link rel="stylesheet/sema" type="text/css" href="styles.sema"&gt;
