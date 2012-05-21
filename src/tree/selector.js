@@ -51,7 +51,7 @@ sema.tree.selector = function(identifier){
 	 */
 	this.isSeparator = function(){
 		var identifier = this.identifier.trim();
-		return ['#','>','.',':',','].indexOf(identifier)>-1;
+		return ['#','>','.',':',',','+'].indexOf(identifier)>-1;
 	}
 	
 	/**

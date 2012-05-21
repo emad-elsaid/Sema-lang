@@ -18,6 +18,7 @@ sema.parse = function(src){
 	':'
 	' *\.'														class_sign
 	'>'
+	'\+'
 	'\('
 	'\)'
 	';|\1563'													line_terminal
@@ -69,7 +70,7 @@ color			:id_sign identifier							[* %% = '#'+%2; *]
 				|id_sign measurement						[* %% = '#'+%2.render(); *]
 				;
 				
-separator		:','|id_sign|class_sign|':'|'>';
+separator		:','|id_sign|class_sign|':'|'>'|'+';
 
 properties_list	:properties_list property					[* %% = %1;%1.push(%2); *]
 				|property									[* %% = [%1]; *]
