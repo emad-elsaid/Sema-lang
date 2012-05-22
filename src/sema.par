@@ -53,6 +53,7 @@ identifier_part :identifier '(' params_list ')'				[* %% = new sema.tree.func(%1
 				|measurement
 				|color
 				|separator
+				|string
 				|'*'
 				;
 				
