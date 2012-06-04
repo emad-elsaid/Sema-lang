@@ -122,9 +122,15 @@ sema.utils.loader = {
 		
 		// create a style tag
 		var style = document.createElement('style');
+		style.setAttribute('type', 'text/css');
 		
 		// the add the css to the style and add it to the document head
-		style.appendChild(document.createTextNode(css));
-		document.head.appendChild(style);
+		if(style.styleSheet) { // IE does it this way
+        		style.styleSheet.cssText = css;
+		} else { // everyone else does it this way
+        		style.appendChild(document.createTextNode(css));
+		}
+
+		document.getElementsByTagName("head")[0].appendChild(style);
 	}
 };

@@ -26,9 +26,8 @@ sema.utils.logger = {
 	
 	// log the input parameter to console if there is any console
 	log: function(input){
-		try{
+		if( window.console )
 			console.log(input);
-		}catch(e){}
 	}
 
 };
